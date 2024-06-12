@@ -1,0 +1,24 @@
+{
+  "name": "Webforj HelloWorld Application",
+  "forwardPorts": [8888],
+  "portsAttributes": {
+    "8888": {
+      "label": "app-preview"
+    }
+  },
+  "build": {
+    "dockerfile": "Dockerfile"
+  },
+  "features": {
+  },
+  "postStartCommand": "/opt/bbx/bin/bbjservices",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "vscjava.vscode-maven",
+        "vscjava.vscode-java-pack",
+        "redhat.java"
+      ]
+    }
+  }
+}
