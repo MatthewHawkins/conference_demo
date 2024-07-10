@@ -21,6 +21,12 @@
       <version>${webforj.version}</version>
       <type>pom</type>
     </dependency>
+    <dependency>
+      <groupId>com.webforj</groupId>
+      <artifactId>kitchen</artifactId>
+      <version>24.00-SNAPSHOT</version>
+      <scope>provided</scope>
+    </dependency>
   </dependencies>
 
   <build>
@@ -38,8 +44,7 @@
         </executions>
         <configuration>
           <deployurl>http://localhost:8888/webforj-install</deployurl>
-          <classname>samples.WebforjHelloWorld</classname>
-          <publishname>hello-world</publishname>
+          <publishname>conference-dashboard</publishname>
           <debug>true</debug>
         </configuration>
       </plugin>

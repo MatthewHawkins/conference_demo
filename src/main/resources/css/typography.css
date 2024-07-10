@@ -1,0 +1,81 @@
+html {
+  font-size: var(--dwc-font-size-m);
+  line-height: var(--dwc-font-line-height-m);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 600;
+  line-height: var(--dwc-font-line-height-xs);
+  margin-top: 1.25em;
+}
+
+h1 {
+  font-size: var(--dwc-font-size-3xl);
+  margin-bottom: 0.75em;
+}
+
+h2 {
+  font-size: var(--dwc-font-size-2xl);
+  margin-bottom: 0.5em;
+}
+
+h3 {
+  font-size: var(--dwc-font-size-xl);
+  margin-bottom: 0.5em;
+}
+
+h4 {
+  font-size: var(--dwc-font-size-l);
+  margin-bottom: 0.5em;
+}
+
+h5 {
+  font-size: var(--dwc-font-size-m);
+  margin-bottom: 0.25em;
+}
+
+h6 {
+  font-size: var(--dwc-font-size-xs);
+  margin-bottom: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+p,
+blockquote {
+  margin-top: 0.5em;
+  margin-bottom: 0.75em;
+}
+
+a {
+  text-decoration: none;
+  color: var(--dwc-color-primary-text);
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+a:visited {
+  color: var(--dwc-color-primary-text-dark);
+}
+
+hr {
+  display: block;
+  align-self: stretch;
+  height: 1px;
+  border: 0;
+  padding: 0;
+  margin: var(--dwc-space-s) calc(var(--dwc-border-radius-m) / 2);
+  background-color: var(--dwc-color-default);
+}
+
+b,
+strong {
+  font-weight: 600;
+}
