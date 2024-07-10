@@ -3,7 +3,6 @@ package com.webforj.demo.widgets.content;
 import java.util.HashMap;
 import java.util.Map;
 
-import com.webforj.App;
 import com.webforj.component.Composite;
 import com.webforj.component.html.elements.Div;
 import com.webforj.demo.pages.BasePage;

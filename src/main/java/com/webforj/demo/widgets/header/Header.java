@@ -32,11 +32,11 @@ public class Header extends Composite<Div> {
   Img logo = new Img("https://documentation.webforj.com/img/webforj.svg");
   TabbedPane tabs = new TabbedPane();
   ThemeToggle themeToggle = new ThemeToggle();
+
   private SimpleRouter router = SimpleRouter.getInstance();
   int selectedIndex;
 
   public Header(){
-
     self.add(logo, tabs, themeToggle);
     self.addClassName("header");
 
