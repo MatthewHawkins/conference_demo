@@ -17,7 +17,6 @@ public class Shell extends Composite<Div>{
 
     appLayout.addToHeader(new Header());
     appLayout.setDrawerPlacement(DrawerPlacement.HIDDEN);
-
     appLayout.addToContent(new ContentDisplay());
   }
 }
