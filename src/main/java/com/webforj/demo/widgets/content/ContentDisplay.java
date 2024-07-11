@@ -8,7 +8,7 @@ import com.webforj.component.html.elements.Div;
 import com.webforj.demo.pages.BasePage;
 import com.webforj.demo.pages.Dashboard;
 import com.webforj.demo.pages.Home;
-import com.webforj.demo.pages.Ecom;
+import com.webforj.demo.pages.sections.ecom.Ecom;
 import com.webforj.demo.pages.Docs;
 import com.webforj.kitchen.simplerouter.SimpleRouter;
 import com.webforj.kitchen.simplerouter.event.SimpleRouteMatchEvent;
