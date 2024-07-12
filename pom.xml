@@ -21,10 +21,16 @@
       <version>${webforj.version}</version>
       <type>pom</type>
     </dependency>
-    <dependency>
+    <!-- <dependency>
       <groupId>com.webforj</groupId>
       <artifactId>kitchen</artifactId>
       <version>24.00-SNAPSHOT</version>
+      <scope>provided</scope>
+    </dependency> -->
+    <dependency>
+      <groupId>com.webforj.addons</groupId>
+      <artifactId>webforj-simple-router</artifactId>
+      <version>1.0-SNAPSHOT</version>
       <scope>provided</scope>
     </dependency>
   </dependencies>

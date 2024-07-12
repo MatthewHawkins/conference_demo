@@ -3,6 +3,8 @@ package com.webforj.demo.widgets.content;
 import java.util.HashMap;
 import java.util.Map;
 
+import com.webforj.addons.services.simplerouter.SimpleRouter;
+import com.webforj.addons.services.simplerouter.event.SimpleRouteMatchEvent;
 import com.webforj.component.Composite;
 import com.webforj.component.html.elements.Div;
 import com.webforj.demo.pages.BasePage;
@@ -10,8 +12,8 @@ import com.webforj.demo.pages.Dashboard;
 import com.webforj.demo.pages.Home;
 import com.webforj.demo.pages.Ecom;
 import com.webforj.demo.pages.Docs;
-import com.webforj.kitchen.simplerouter.SimpleRouter;
-import com.webforj.kitchen.simplerouter.event.SimpleRouteMatchEvent;
+// import com.webforj.kitchen.simplerouter.SimpleRouter;
+// import com.webforj.kitchen.simplerouter.event.SimpleRouteMatchEvent;
 
 public class ContentDisplay extends Composite<Div> {
 
