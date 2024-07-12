@@ -9,6 +9,7 @@ import java.util.Map;
 import com.google.gson.Gson;
 import com.google.gson.JsonArray;
 import com.google.gson.reflect.TypeToken;
+import com.webforj.component.googlecharts.GoogleChart;
 import com.webforj.component.html.elements.Div;
 import com.webforj.component.html.elements.Paragraph;
 import com.webforj.utilities.Assets;

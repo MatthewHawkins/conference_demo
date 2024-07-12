@@ -33,6 +33,11 @@
       <version>1.0-SNAPSHOT</version>
       <scope>provided</scope>
     </dependency>
+    <dependency>
+      <groupId>com.webforj</groupId>
+      <artifactId>webforj-googlecharts</artifactId>
+      <version>${webforj.version}</version>
+    </dependency>
   </dependencies>
 
   <build>

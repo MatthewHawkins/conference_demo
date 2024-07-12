@@ -44,8 +44,8 @@ public class Inbox extends Div {
             Div message = new Div();
             message.addClassName("card_message")
                 .setUserData("title", names[i])
-                .setUserData("message", messages[i])
-                .onClick(this::handleMessageClick);
+                .setUserData("message", messages[i]);
+            message.onClick(this::handleMessageClick);
 
             Div avatar = new Div();
             avatar.addClassName("card_messageAvatar");

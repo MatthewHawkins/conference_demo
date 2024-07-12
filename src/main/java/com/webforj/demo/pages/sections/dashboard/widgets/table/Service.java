@@ -72,7 +72,7 @@ public final class Service {
             record.setProduct(products[i]);
             record.setPrice(prices[i]);
             record.setQuantity(quantities[i]);
-            record.setAmount(amounts[i])
+            record.setAmount(amounts[i]);
             record.setImageURL(photoURL[i]);
             data.add(record);
         }

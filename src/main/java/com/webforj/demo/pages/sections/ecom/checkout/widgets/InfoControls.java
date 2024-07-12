@@ -1,4 +1,4 @@
-package com.webforj.demo.pages.sections.ecom.checkout.checkout.widgets;
+package com.webforj.demo.pages.sections.ecom.checkout.widgets;
 
 import com.webforj.component.Composite;
 import com.webforj.component.button.Button;

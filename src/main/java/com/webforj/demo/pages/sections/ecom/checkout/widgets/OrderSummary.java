@@ -1,4 +1,4 @@
-package com.webforj.demo.pages.sections.ecom.checkout.checkout.widgets;
+package com.webforj.demo.pages.sections.ecom.checkout.widgets;
 
 import com.webforj.component.html.elements.Div;
 import com.webforj.component.html.elements.Img;

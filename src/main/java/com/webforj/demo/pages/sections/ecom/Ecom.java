@@ -2,7 +2,6 @@ package com.webforj.demo.pages.sections.ecom;
 
 import com.webforj.annotation.InlineStyleSheet;
 import com.webforj.component.html.elements.Div;
-import com.webforj.component.tabbedpane.TabbedPane;
 import com.webforj.demo.pages.BasePage;
 import com.webforj.demo.pages.sections.ecom.checkout.CheckoutPage;
 import com.webforj.demo.pages.sections.ecom.productdetails.ProductDetailsPage;

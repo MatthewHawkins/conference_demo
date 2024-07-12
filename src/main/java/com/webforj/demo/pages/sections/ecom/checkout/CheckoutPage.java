@@ -2,9 +2,9 @@ package com.webforj.demo.pages.sections.ecom.checkout;
 
 import com.webforj.component.html.elements.Div;
 import com.webforj.component.html.elements.Paragraph;
-import com.webforj.demo.pages.sections.ecom.checkout.checkout.widgets.BillingInfo;
-import com.webforj.demo.pages.sections.ecom.checkout.checkout.widgets.InfoControls;
-import com.webforj.demo.pages.sections.ecom.checkout.checkout.widgets.OrderSummary;
+import com.webforj.demo.pages.sections.ecom.checkout.widgets.BillingInfo;
+import com.webforj.demo.pages.sections.ecom.checkout.widgets.InfoControls;
+import com.webforj.demo.pages.sections.ecom.checkout.widgets.OrderSummary;
 
 public class CheckoutPage extends Div{
 
