@@ -24,39 +24,39 @@ public class OrderSummary extends Div {
   private Span totalValue = new Span("$284");
 
   public OrderSummary() {
-    title.addClassName("order-summary-title");
+    title.addClassName("title-order-summary");
 
     Div item1 = new Div().addClassName("order-item");
-    image1.addClassName("order-image");
-    name1.addClassName("item-name");
-    quantityAndPrice1.addClassName("item-quantity-price");
+    image1.addClassName("order-item__image");
+    name1.addClassName("order-item__name");
+    quantityAndPrice1.addClassName("order-item__quantity-price");
     item1.add(image1, name1, quantityAndPrice1);
 
     Div item2 = new Div().addClassName("order-item");
-    image2.addClassName("order-image");
-    name2.addClassName("item-name");
-    quantityAndPrice2.addClassName("item-quantity-price");
+    image2.addClassName("order-item__image");
+    name2.addClassName("order-item__name");
+    quantityAndPrice2.addClassName("order-item__quantity-price");
     item2.add(image2, name2, quantityAndPrice2);
 
     Div item3 = new Div().addClassName("order-item");
-    image3.addClassName("order-image");
-    name3.addClassName("item-name");
-    quantityAndPrice3.addClassName("item-quantity-price");
+    image3.addClassName("order-item__image");
+    name3.addClassName("order-item__name");
+    quantityAndPrice3.addClassName("order-item__quantity-price");
     item3.add(image3, name3, quantityAndPrice3);
 
     Div subtotalLine = new Div().addClassName("total-line-item");
-    subtotalLabel.addClassName("total-label");
-    subtotalValue.addClassName("total-value");
+    subtotalLabel.addClassName("total-line-item__label");
+    subtotalValue.addClassName("total-line-item__value");
     subtotalLine.add(subtotalLabel, subtotalValue);
 
     Div shippingLine = new Div().addClassName("total-line-item");
-    shippingLabel.addClassName("total-label");
-    shippingValue.addClassName("total-value");
+    shippingLabel.addClassName("total-line-item__label");
+    shippingValue.addClassName("total-line-item__value");
     shippingLine.add(shippingLabel, shippingValue);
 
     Div totalLine = new Div().addClassName("total-line-item");
-    totalLabel.addClassName("total-label");
-    totalValue.addClassName("total-value");
+    totalLabel.addClassName("total-line-item__label");
+    totalValue.addClassName("total-line-item__value");
     totalLine.add(totalLabel, totalValue);
 
     this.add(title, item1, item2, item3, subtotalLine, shippingLine, totalLine);
