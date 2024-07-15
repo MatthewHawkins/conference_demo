@@ -272,7 +272,7 @@
     height: auto;
   }
   
-  .checkout-step {
+  .button-checkout {
     margin: 10px;
     cursor: pointer;
     --bbj-button-background: #f4f5f7;
@@ -280,7 +280,7 @@
     height: 100px;
   }
   
-  .info-controls-container {
+  .container-info-controls {
     display: flex;
     flex-direction: column;
   }
