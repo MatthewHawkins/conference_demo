@@ -6,26 +6,26 @@ import com.webforj.demo.pages.sections.ecom.checkout.widgets.BillingInfo;
 import com.webforj.demo.pages.sections.ecom.checkout.widgets.InfoControls;
 import com.webforj.demo.pages.sections.ecom.checkout.widgets.OrderSummary;
 
-public class CheckoutPage extends Div{
+public class CheckoutPage extends Div {
 
-    public CheckoutPage() {
-        Paragraph cartTitle = new Paragraph("Shopping Cart");
-        cartTitle.addClassName("page-title");
+  public CheckoutPage() {
+    Paragraph cartTitle = new Paragraph("Shopping Cart");
+    cartTitle.addClassName("page-title");
 
-        InfoControls infoControls = new InfoControls();
-        OrderSummary orderSummary = new OrderSummary();
-        Div leftSection = new Div(infoControls, orderSummary);
-        leftSection.addClassName("left-checkout-container");
+    InfoControls infoControls = new InfoControls();
+    OrderSummary orderSummary = new OrderSummary();
+    Div leftSection = new Div(infoControls, orderSummary);
+    leftSection.addClassName("left-checkout-container");
 
-        BillingInfo billingInfo = new BillingInfo();
-        Div rightSection = new Div(billingInfo);
-        rightSection.addClassName("right-checkout-container");
+    BillingInfo billingInfo = new BillingInfo();
+    Div rightSection = new Div(billingInfo);
+    rightSection.addClassName("right-checkout-container");
 
-        Div checkoutContainer = new Div(leftSection, rightSection);
-        checkoutContainer.addClassName("checkout-container");
+    Div checkoutContainer = new Div(leftSection, rightSection);
+    checkoutContainer.addClassName("checkout-container");
 
-        this.add(cartTitle, checkoutContainer);
-        this.addClassName("background");
-    }
+    this.add(cartTitle, checkoutContainer);
+    this.addClassName("background");
+  }
 
 }
