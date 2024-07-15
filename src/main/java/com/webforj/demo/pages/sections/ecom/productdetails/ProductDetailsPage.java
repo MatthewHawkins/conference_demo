@@ -23,7 +23,7 @@ public class ProductDetailsPage extends Div{
     ProductDetails productDetails = new ProductDetails();
     
     Div imageContainer = new Div();
-    imageContainer.addClassName("product-image-container")
+    imageContainer.addClassName("product-details-container__image-container")
       .add(productImage);
     
     Div productDetailsContainer = new Div();

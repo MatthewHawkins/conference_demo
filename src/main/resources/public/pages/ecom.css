@@ -119,7 +119,7 @@
     height: auto;
   }
   
-  .product-image-container,
+  .product-details-container__image-container,
   .product-info-container {
     display: flex;
     flex-direction: column;
