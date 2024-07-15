@@ -40,7 +40,7 @@ public class ProductControls extends Div {
     Div optionButtons = new Div();
     Button likeButton = new Button("""
       <html>
-      <dwc-icon name='heart' expanse='s'></dwc-icon>
+        <dwc-icon name='heart' expanse='s'></dwc-icon>
       </html>
     """)
       .addClassName("like-button");
@@ -50,10 +50,11 @@ public class ProductControls extends Div {
 
     menuButtons.add(sizeDrop, quantityDrop);
     optionButtons.add(likeButton, cartButton);
-    menuButtons.addClassName("control-buttons-container");
-    optionButtons.addClassName("control-buttons-container");
+    menuButtons.addClassName("controls-container__buttons-container");
+    optionButtons.addClassName("controls-container__buttons-container");
 
     this.add(menuButtons, optionButtons);
     this.addClassName("controls-container");
   }
+
 }

@@ -190,7 +190,7 @@
     gap: 30px;
   }
   
-  .control-buttons-container {
+  .controls-container__buttons-container {
     display: flex;
     gap: 30px;
   }
@@ -343,6 +343,10 @@
     font-weight: bold;
   }
   
+  .order-item__image {
+    width: 15%;
+  }
+
   .total-line-item {
     display: flex;
     justify-content: space-between;
@@ -357,10 +361,6 @@
   .total-line-item__value {
     font-size: 1em;
     font-weight: bold;
-  }
-  
-  .order-item__image {
-    width: 15%;
   }
   
   .button-cancel::part(control) {
