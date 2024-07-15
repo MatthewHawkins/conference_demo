@@ -363,24 +363,24 @@
     width: 15%;
   }
   
-  .cancel-button::part(control) {
+  .button-cancel::part(control) {
     background-color: #5C636A;
     --dwc-button-border-color: transparent;
   }
-  .cancel-button::part(label) {
+  .button-cancel::part(label) {
     color: white;
   }
-  .cancel-button::before {
+  .button-cancel::before {
     border-color: transparent;
   }
   
-  .submit-button::part(control) {
+  .button-submit::part(control) {
     background-color: #16a085;
     --dwc-button-border-color: transparent;
   }
-  .submit-button::part(label) {
+  .button-submit::part(label) {
     color: white;
   }
-  .submit-button::before {
+  .button-submit::before {
     border-color: transparent;
   }

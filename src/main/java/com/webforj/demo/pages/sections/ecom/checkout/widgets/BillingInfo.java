@@ -52,7 +52,7 @@ public class BillingInfo extends Div{
       </html>
     """)
       .setTheme(ButtonTheme.GRAY)
-      .addClassName("cancel-button");            
+      .addClassName("button-cancel");            
 
     submit.setText("""
       <html>
@@ -63,7 +63,7 @@ public class BillingInfo extends Div{
       </html>
     """)
       .setTheme(ButtonTheme.SUCCESS)
-      .addClassName("submit-button");
+      .addClassName("button-submit");
 
     FlexLayout mainLayout = FlexLayout.create()
       .vertical() 
