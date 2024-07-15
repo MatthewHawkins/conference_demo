@@ -9,20 +9,20 @@ import com.webforj.demo.pages.sections.ecom.products.widgets.SearchBar;
 
 public class ProductsPage extends Div {
     
-    public ProductsPage() {
-        Paragraph productsTitle = new Paragraph("Products");
-        productsTitle.addClassName("page-title");
+  public ProductsPage() {
+    Paragraph productsTitle = new Paragraph("Products");
+    productsTitle.addClassName("page-title");
 
-        Products products = new Products();
+    Products products = new Products();
 
-        SearchBar searchBar = new SearchBar();
+    SearchBar searchBar = new SearchBar();
 
-        Navigator nav = new Navigator(100);
-        nav.setLayout(Layout.PAGES);
-        nav.getPaginator().setMax(5);
+    Navigator nav = new Navigator(100);
+    nav.setLayout(Layout.PAGES);
+    nav.getPaginator().setMax(5);
 
-        this.add(productsTitle, searchBar, products, nav);
-        this.addClassName("background");
-    }
+    this.add(productsTitle, searchBar, products, nav);
+    this.addClassName("background");
+  }
     
 }
