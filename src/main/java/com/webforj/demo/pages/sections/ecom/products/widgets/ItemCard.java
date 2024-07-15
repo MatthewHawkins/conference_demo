@@ -12,11 +12,11 @@ public class ItemCard extends Composite<Div> {
   private Div stockDiv = new Div();
 
   public ItemCard(String productName, Img productImage, String price, String rating, String stock) {
-    imageDiv.addClassName("image");
-    nameDiv.addClassName("name");
-    priceDiv.addClassName("price");
-    ratingDiv.addClassName("rating");
-    stockDiv.addClassName("stock");
+    imageDiv.addClassName("item-card__image");
+    nameDiv.addClassName("item-card__name");
+    priceDiv.addClassName("item-card__price");
+    ratingDiv.addClassName("item-card__rating");
+    stockDiv.addClassName("item-card__stock");
 
     this.nameDiv.setText(productName);
     this.priceDiv.setText(price);
@@ -26,7 +26,7 @@ public class ItemCard extends Composite<Div> {
     imageDiv.add(productImage);
     imageDiv.setStyle("background-color", "var(--dwc-surface-1)");
 
-    getBoundComponent().addClassName("itemcard")
+    getBoundComponent().addClassName("item-card")
       .add(imageDiv, nameDiv, priceDiv, ratingDiv, stockDiv);
   }
 

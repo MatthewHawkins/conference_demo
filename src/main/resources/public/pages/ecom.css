@@ -1,4 +1,4 @@
-.itemcard {
+.item-card {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -9,29 +9,29 @@
     flex: 1 1 15%;
   }
   
-  .image img {
+  .item-card__image img {
     width: 100%;
     height: auto;
     object-fit: contain;
   }
   
-  .name {
+  .item-card__name {
     font-weight: bold;
     margin-top: 10px;
   }
   
-  .price {
+  .item-card__price {
     font-size: 1.2em;
     margin-bottom: 5px;
   }
   
-  .rating {
+  .item-card__rating {
     display: flex;
     justify-content: center;
     margin-bottom: 5px;
   }
   
-  .stock {
+  .item-card__stock {
     font-size: 0.8em;
   }
   
@@ -102,7 +102,7 @@
     }
   }
   
-  .itemcard:hover {
+  .item-card:hover {
     animation: grow 0.3s ease forwards;
   }
   
