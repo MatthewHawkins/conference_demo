@@ -20,7 +20,7 @@ public class ProductImage extends Composite<Div> {
     for (int i = 0; i < imageUrls.length; i++) {
       final int index = i;
       Img thumbnail = new Img(imageUrls[i]);
-      thumbnail.addClassName("thumbnail");
+      thumbnail.addClassName("thumbnail-container__thumbnail");
       thumbnail.addClickListener(e -> updateMainImage(index));
       thumbnailContainer.add(thumbnail);
     }
