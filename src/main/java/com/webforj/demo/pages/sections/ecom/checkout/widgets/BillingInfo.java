@@ -127,6 +127,65 @@ public class BillingInfo extends Div {
     mainLayout.setStyle("order", "1");
     footerLayout.setStyle("order", "3");
   }
+  
+  private void createMailingForm(ToggleEvent e) {
+    if (e.isToggled()) {
+      if (mailingStates.isEmpty() || mailingCountries.isEmpty()) {
+        mailingZip.setAttribute("label", "Zip Code");
+
+        populateStates();
+        populateCountries();
+
+        mailingLayout = FlexLayout.create()
+          .vertical() 
+          .build()
+          .addClassName("billing-info order-div-2")
+          .setStyle("gap", "40px");
+  
+        FlexLayout rowOne = FlexLayout.create(mailingTitle, mailingSubtitle)
+          .vertical()
+          .build();
+        mailingTitle.setStyle("font-size", "16px");
+        mailingSubtitle.setStyle("font-size", "12px")
+          .setStyle("color", "#9ba8af");    
+
+        FlexLayout rowTwo = FlexLayout.create(mailingFirstName, mailingLastName)
+          .horizontal()
+          .build()
+          .setItemBasis("50%", mailingFirstName)
+          .setItemBasis("50%", mailingLastName);
+
+        FlexLayout rowThree = FlexLayout.create(mailingEmail, mailingPhone)
+          .horizontal()
+          .build()
+          .setItemBasis("50%", mailingEmail)
+          .setItemBasis("50%", mailingPhone);
+
+        FlexLayout rowFour = FlexLayout.create(mailingCity, mailingStates, mailingZip)
+          .horizontal()
+          .build()
+          .setItemBasis("50%", mailingCity)
+          .setItemBasis("30%", mailingStates);
+        mailingZip.setStyle("width", "20%");
+
+        mailingLayout.add(rowOne, rowTwo, mailingAddress, rowThree, rowFour, mailingCountries);
+        this.add(mailingLayout);
+        mailingLayout.setStyle("order", "2");
+      } else {
+        mailingLayout.setVisible(true);
+      }
+    } else {
+      mailingLayout.setVisible(false);
+      mailingAddress.setText("");
+      mailingCity.setText("");
+      mailingEmail.setText("");
+      mailingFirstName.setText("");
+      mailingLastName.setText("");
+      mailingPhone.setText("");
+      mailingCountries.setText("");
+      mailingStates.setText("");
+    }
+  }
 
   private void populateCountries() {
     ChoiceBox countryDrop = new ChoiceBox();
@@ -136,7 +195,7 @@ public class BillingInfo extends Div {
     } else {
       countryDrop = countries;
     }
-
+    
     countryDrop.setLabel("Country").setMaxRowCount(10); 
     countryDrop.add("US", "United States");
     countryDrop.add("CA", "Canada");
@@ -227,62 +286,4 @@ public class BillingInfo extends Div {
     stateDrop.add("WY", "Wyoming");
   }
 
-  private void createMailingForm(ToggleEvent e) {
-    if (e.isToggled()) {
-      if (mailingStates.isEmpty() || mailingCountries.isEmpty()) {
-        mailingZip.setAttribute("label", "Zip Code");
-
-        populateStates();
-        populateCountries();
-
-        mailingLayout = FlexLayout.create()
-          .vertical() 
-          .build()
-          .addClassName("billing-info order-div-2")
-          .setStyle("gap", "40px");
-  
-        FlexLayout rowOne = FlexLayout.create(mailingTitle, mailingSubtitle)
-          .vertical()
-          .build();
-        mailingTitle.setStyle("font-size", "16px");
-        mailingSubtitle.setStyle("font-size", "12px")
-          .setStyle("color", "#9ba8af");    
-
-        FlexLayout rowTwo = FlexLayout.create(mailingFirstName, mailingLastName)
-          .horizontal()
-          .build()
-          .setItemBasis("50%", mailingFirstName)
-          .setItemBasis("50%", mailingLastName);
-
-        FlexLayout rowThree = FlexLayout.create(mailingEmail, mailingPhone)
-          .horizontal()
-          .build()
-          .setItemBasis("50%", mailingEmail)
-          .setItemBasis("50%", mailingPhone);
-
-        FlexLayout rowFour = FlexLayout.create(mailingCity, mailingStates, mailingZip)
-          .horizontal()
-          .build()
-          .setItemBasis("50%", mailingCity)
-          .setItemBasis("30%", mailingStates);
-        mailingZip.setStyle("width", "20%");
-
-        mailingLayout.add(rowOne, rowTwo, mailingAddress, rowThree, rowFour, mailingCountries);
-        this.add(mailingLayout);
-        mailingLayout.setStyle("order", "2");
-      } else {
-        mailingLayout.setVisible(true);
-      }
-    } else {
-      mailingLayout.setVisible(false);
-      mailingAddress.setText("");
-      mailingCity.setText("");
-      mailingEmail.setText("");
-      mailingFirstName.setText("");
-      mailingLastName.setText("");
-      mailingPhone.setText("");
-      mailingCountries.setText("");
-      mailingStates.setText("");
-    }
-  }
 }
