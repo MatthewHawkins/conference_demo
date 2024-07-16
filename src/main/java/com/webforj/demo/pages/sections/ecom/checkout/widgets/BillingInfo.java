@@ -44,16 +44,16 @@ public class BillingInfo extends Div {
   private FlexLayout footerLayout;
 
   public BillingInfo() {
-    this.addClassName("billing-info");
-
-    zip.setAttribute("label", "Zip Code");
-
     populateStates();
     populateCountries();
+    createBillingForm();
+  }
 
-    //make a checkbox instead of radio button
+  private void createBillingForm() {
+    zip.setAttribute("label", "Zip Code");
+
     diffAddress.setText("Ship to different address?");
-    diffAddress.addToggleListener(this::addMailingInfo);
+    diffAddress.addToggleListener(this::createMailingForm);
     orderNotes.setPlaceholder("Write order notes...");
 
     back.setText("""
@@ -77,8 +77,8 @@ public class BillingInfo extends Div {
     """)
       .setTheme(ButtonTheme.SUCCESS)
       .addClassName("button-submit");
-      
-      FlexLayout rowOne = FlexLayout.create(title, subtitle)
+
+    FlexLayout rowOne = FlexLayout.create(title, subtitle)
       .vertical()
       .build();
       title.setStyle("font-size", "16px");
@@ -227,7 +227,7 @@ public class BillingInfo extends Div {
     stateDrop.add("WY", "Wyoming");
   }
 
-  private void addMailingInfo(ToggleEvent e) {
+  private void createMailingForm(ToggleEvent e) {
     if (e.isToggled()) {
       if (mailingStates.isEmpty() || mailingCountries.isEmpty()) {
         mailingZip.setAttribute("label", "Zip Code");
