@@ -67,13 +67,13 @@
     background-color: var(--dwc-surface-3);
   }
   
-  .search-container {
+  .search-bar__search-container {
     display: flex;
     align-items: center;
     gap: 10px;
   }
   
-  .sort-container {
+  .search-bar__sort-container {
     display: flex;
     flex-direction: row;
     margin-left: auto;
@@ -82,14 +82,14 @@
     align-items: center;
   }
   
-  .sort-label {
+  .sort-container__label {
     display: inline-flex;
     align-items: center;
     margin-right: 5px;
     font-weight: bold;
   }
   
-  .sort-drop {
+  .sort-container__drop {
     flex: 1;
   }
   
