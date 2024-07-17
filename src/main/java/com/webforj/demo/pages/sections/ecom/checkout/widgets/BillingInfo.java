@@ -96,9 +96,6 @@ public class BillingInfo extends Div {
     //   .setTheme(ButtonTheme.SUCCESS)
     //   .addClassName("button-submit");
 
-    title.setStyle("margin", "0");
-    subtitle.setStyle("margin", "0");
-
     FlexLayout rowOne = FlexLayout.create(title, subtitle)
       .vertical()
       .build()
