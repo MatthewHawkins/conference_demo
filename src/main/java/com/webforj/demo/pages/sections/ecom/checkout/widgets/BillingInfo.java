@@ -15,7 +15,7 @@ import com.webforj.component.optioninput.CheckBox;
 public class BillingInfo extends Div {
   private Paragraph title = new Paragraph("Billing Information");
   private Paragraph mailingTitle = new Paragraph("Mailing Information");
-  private Paragraph subtitle = new Paragraph("Fill in the form below to receive an invoice for your order.");
+  private Paragraph subtitle = new Paragraph("Please fill in your billing information");
   private Paragraph mailingSubtitle = new Paragraph("Please fill in your mailing information");
   private TextField firstName = new TextField("First Name");
   private TextField lastName = new TextField("Last Name");
@@ -23,7 +23,6 @@ public class BillingInfo extends Div {
   private TextField phone = new TextField("Phone");
   private TextField address = new TextField("Address");
   private TextField city = new TextField("City");
-  private TextField orderNotes = new TextField("Order Notes");
   private ChoiceBox states = new ChoiceBox();
   private ChoiceBox mailingStates = new ChoiceBox();
   private ChoiceBox countries = new ChoiceBox();
@@ -54,9 +53,8 @@ public class BillingInfo extends Div {
     this.setStyle("flex-direction", "column");
     zip.setAttribute("label", "Zip Code");
 
-    diffAddress.setText("Ship to different address?");
+    diffAddress.setText("Ship to different address");
     diffAddress.addToggleListener(this::createMailingForm);
-    orderNotes.setPlaceholder("Write order notes...");
 
     back.setText("""
       <html>
@@ -67,7 +65,16 @@ public class BillingInfo extends Div {
       </html>
     """)
       .setTheme(ButtonTheme.GRAY)
-      .addClassName("button-cancel");            
+      .addClassName("button-cancel");  
+
+    // back.setHtml("""
+    //     <div style='text-align: center;'>
+    //       <dwc-icon name='arrow-left'></dwc-icon>
+    //       Back to Shopping Cart
+    //     </div>
+    // """)
+      // .setTheme(ButtonTheme.GRAY)
+      // .addClassName("button-cancel");
 
     submit.setText("""
       <html>
@@ -80,37 +87,52 @@ public class BillingInfo extends Div {
       .setTheme(ButtonTheme.SUCCESS)
       .addClassName("button-submit");
 
+    // submit.setHtml("""
+    //   <div style='text-align: center;'>
+    //     <dwc-icon name='truck-delivery'></dwc-icon>
+    //       Proceed to Shipping
+    //   </div>
+    // """)
+    //   .setTheme(ButtonTheme.SUCCESS)
+    //   .addClassName("button-submit");
+
+    title.setStyle("margin", "0");
+    subtitle.setStyle("margin", "0");
+
     FlexLayout rowOne = FlexLayout.create(title, subtitle)
       .vertical()
-      .build();
-      title.setStyle("font-size", "16px");
-      subtitle.setStyle("font-size", "12px")
-      .setStyle("color", "#9ba8af");    
+      .build()
+      .setStyle("gap", "0");    
+    title.setStyle("font-size", "16px")
+      .setStyle("margin", "0"); 
+    subtitle.setStyle("font-size", "12px")
+      .setStyle("color", "#9ba8af")
+      .setStyle("margin-top", ".5em");
       
       FlexLayout rowTwo = FlexLayout.create(firstName, lastName)
-      .horizontal()
-      .build()
-      .setItemBasis("50%", firstName)
-      .setItemBasis("50%", lastName);
+        .horizontal()
+        .build()
+        .setItemBasis("50%", firstName)
+        .setItemBasis("50%", lastName);
       
       FlexLayout rowThree = FlexLayout.create(email, phone)
-      .horizontal()
-      .build()
-      .setItemBasis("50%", email)
-      .setItemBasis("50%", phone);
+        .horizontal()
+        .build()
+        .setItemBasis("50%", email)
+        .setItemBasis("50%", phone);
       
       FlexLayout rowFour = FlexLayout.create(city, states, zip)
-      .horizontal()
-      .build()
-      .setItemBasis("50%", city)
-      .setItemBasis("30%", states);
-      zip.setStyle("width", "20%");
+        .horizontal()
+        .build()
+        .setItemBasis("50%", city)
+        .setItemBasis("30%", states);
+        zip.setStyle("width", "20%");
       
       FlexLayout rowFive = FlexLayout.create(back, submit)
-      .horizontal()
-      .justify().between()
-      .build()
-      .setStyle("margin-top", "30px");
+        .horizontal()
+        .justify().between()
+        .build()
+        .setStyle("margin-top", "30px");
       
       mainLayout = FlexLayout.create(rowOne, rowTwo, address, rowThree, rowFour, countries, diffAddress)
         .vertical() 
@@ -141,29 +163,32 @@ public class BillingInfo extends Div {
 
         
         FlexLayout rowOne = FlexLayout.create(mailingTitle, mailingSubtitle)
-        .vertical()
-        .build();
-        mailingTitle.setStyle("font-size", "16px");
+          .vertical()
+          .build()
+          .setStyle("gap", "0"); 
+        mailingTitle.setStyle("font-size", "16px")
+          .setStyle("margin", "0"); 
         mailingSubtitle.setStyle("font-size", "12px")
-        .setStyle("color", "#9ba8af");    
+          .setStyle("margin-top", ".5em")
+          .setStyle("color", "#9ba8af");    
         
         FlexLayout rowTwo = FlexLayout.create(mailingFirstName, mailingLastName)
-        .horizontal()
-        .build()
-        .setItemBasis("50%", mailingFirstName)
-        .setItemBasis("50%", mailingLastName);
+          .horizontal()
+          .build()
+          .setItemBasis("50%", mailingFirstName)
+          .setItemBasis("50%", mailingLastName);
         
         FlexLayout rowThree = FlexLayout.create(mailingEmail, mailingPhone)
-        .horizontal()
-        .build()
-        .setItemBasis("50%", mailingEmail)
-        .setItemBasis("50%", mailingPhone);
+          .horizontal()
+          .build()
+          .setItemBasis("50%", mailingEmail)
+          .setItemBasis("50%", mailingPhone);
         
         FlexLayout rowFour = FlexLayout.create(mailingCity, mailingStates, mailingZip)
-        .horizontal()
-        .build()
-        .setItemBasis("50%", mailingCity)
-        .setItemBasis("30%", mailingStates);
+          .horizontal()
+          .build()
+          .setItemBasis("50%", mailingCity)
+          .setItemBasis("30%", mailingStates);
         mailingZip.setStyle("width", "20%");
         
         mailingLayout = FlexLayout.create(rowOne, rowTwo, mailingAddress, rowThree, rowFour, mailingCountries)
