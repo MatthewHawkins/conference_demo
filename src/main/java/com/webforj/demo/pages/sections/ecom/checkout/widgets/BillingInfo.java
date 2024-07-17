@@ -50,6 +50,8 @@ public class BillingInfo extends Div {
   }
 
   private void createBillingForm() {
+    this.setStyle("display", "flex");
+    this.setStyle("flex-direction", "column");
     zip.setAttribute("label", "Zip Code");
 
     diffAddress.setText("Ship to different address?");
@@ -114,18 +116,19 @@ public class BillingInfo extends Div {
         .vertical() 
         .build()
         .addClassName("billing-info order-div-1")
-        .setStyle("gap", "40px");
+        .setStyle("gap", "40px")
+        .setStyle("order", "1");
       
       footerLayout = FlexLayout.create(rowFive)
         .horizontal()
         .justify().between()
         .build()
         .addClassName("billing-info")
-        .setStyle("margin-top", "30px");
-      
+        .setStyle("margin-top", "30px")
+        .setStyle("order", "3");
+
+
     this.add(mainLayout, footerLayout);
-    mainLayout.setStyle("order", "1");
-    footerLayout.setStyle("order", "3");
   }
   
   private void createMailingForm(ToggleEvent e) {
@@ -136,41 +139,41 @@ public class BillingInfo extends Div {
         populateStates();
         populateCountries();
 
-        mailingLayout = FlexLayout.create()
+        
+        FlexLayout rowOne = FlexLayout.create(mailingTitle, mailingSubtitle)
+        .vertical()
+        .build();
+        mailingTitle.setStyle("font-size", "16px");
+        mailingSubtitle.setStyle("font-size", "12px")
+        .setStyle("color", "#9ba8af");    
+        
+        FlexLayout rowTwo = FlexLayout.create(mailingFirstName, mailingLastName)
+        .horizontal()
+        .build()
+        .setItemBasis("50%", mailingFirstName)
+        .setItemBasis("50%", mailingLastName);
+        
+        FlexLayout rowThree = FlexLayout.create(mailingEmail, mailingPhone)
+        .horizontal()
+        .build()
+        .setItemBasis("50%", mailingEmail)
+        .setItemBasis("50%", mailingPhone);
+        
+        FlexLayout rowFour = FlexLayout.create(mailingCity, mailingStates, mailingZip)
+        .horizontal()
+        .build()
+        .setItemBasis("50%", mailingCity)
+        .setItemBasis("30%", mailingStates);
+        mailingZip.setStyle("width", "20%");
+        
+        mailingLayout = FlexLayout.create(rowOne, rowTwo, mailingAddress, rowThree, rowFour, mailingCountries)
           .vertical() 
           .build()
           .addClassName("billing-info order-div-2")
-          .setStyle("gap", "40px");
-  
-        FlexLayout rowOne = FlexLayout.create(mailingTitle, mailingSubtitle)
-          .vertical()
-          .build();
-        mailingTitle.setStyle("font-size", "16px");
-        mailingSubtitle.setStyle("font-size", "12px")
-          .setStyle("color", "#9ba8af");    
+          .setStyle("gap", "40px")
+          .setStyle("order", "2");
 
-        FlexLayout rowTwo = FlexLayout.create(mailingFirstName, mailingLastName)
-          .horizontal()
-          .build()
-          .setItemBasis("50%", mailingFirstName)
-          .setItemBasis("50%", mailingLastName);
-
-        FlexLayout rowThree = FlexLayout.create(mailingEmail, mailingPhone)
-          .horizontal()
-          .build()
-          .setItemBasis("50%", mailingEmail)
-          .setItemBasis("50%", mailingPhone);
-
-        FlexLayout rowFour = FlexLayout.create(mailingCity, mailingStates, mailingZip)
-          .horizontal()
-          .build()
-          .setItemBasis("50%", mailingCity)
-          .setItemBasis("30%", mailingStates);
-        mailingZip.setStyle("width", "20%");
-
-        mailingLayout.add(rowOne, rowTwo, mailingAddress, rowThree, rowFour, mailingCountries);
         this.add(mailingLayout);
-        mailingLayout.setStyle("order", "2");
       } else {
         mailingLayout.setVisible(true);
       }
