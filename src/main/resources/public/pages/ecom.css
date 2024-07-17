@@ -104,6 +104,7 @@
   
   .item-card:hover {
     animation: grow 0.3s ease forwards;
+    cursor: pointer;
   }
   
   /* Product Details Page Styles */
