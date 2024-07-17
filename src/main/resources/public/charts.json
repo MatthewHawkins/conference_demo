@@ -1,0 +1,64 @@
+{
+    "hAxis": {
+      "titleTextStyle": {
+        "color": "#607d8b"
+      },
+      "gridlines": {
+        "count": 0
+      },
+      "textStyle": {
+        "color": "#607d8b",
+        "fontSize": "12",
+        "bold": true
+      }
+    },
+    "vAxis": {
+      "titleTextStyle": {
+        "color": "#607d8b"
+      },
+      "gridlines": {
+        "color": "#e0e0e0"
+      },
+      "textStyle": {
+        "color": "#607d8b",
+        "fontSize": "12",
+        "bold": true
+      }
+    },
+    "legend": {
+      "position": "top",
+      "alignment": "center",
+      "textStyle": {
+        "color": "#607d8b",
+        "fontSize": "12",
+        "bold": true
+      }
+    },
+    "colors": [
+      "#006fe6",
+      "#8f64e0",
+      "#ce55ca",
+      "#fa49ab",
+      "#ff4d85",
+      "#ff655e",
+      "#ff8537",
+      "#ffa600"
+    ],
+    "areaOpacity": 0.24,
+    "lineWidth": 1,
+    "backgroundColor": "transparent",
+    "chartArea": {
+      "backgroundColor": "transparent"
+    },
+    "bar": {
+      "groupWidth": "40"
+    },
+    "colorAxis": {
+      "colors": [
+        "#006fe6",
+        "#8f64e0",
+        "#ce55ca",
+        "#fa49ab"
+      ]
+    }
+  }

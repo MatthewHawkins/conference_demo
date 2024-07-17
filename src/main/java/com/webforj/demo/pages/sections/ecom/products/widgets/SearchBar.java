@@ -25,7 +25,7 @@ public class SearchBar extends Composite<Div> {
       .setPlaceholder("search...");
 
     searchContainer.add(searchInput, searchBtn);
-    searchContainer.addClassName("search-container");
+    searchContainer.addClassName("search-bar__search-container");
       
     ArrayList<ListItem> categories = new ArrayList<>();
     categories.add(new ListItem("All"));
@@ -38,13 +38,13 @@ public class SearchBar extends Composite<Div> {
 
     sortDrop.insert(categories)
       .selectIndex(0)
-      .addClassName("sort-drop");
+      .addClassName("sort-container__drop");
 
     sortLbl.setVisible(true)
-      .addClassName("sort-label");
+      .addClassName("sort-container__label");
 
     sortContainer.add(sortLbl, sortDrop);
-    sortContainer.addClassName("sort-container");
+    sortContainer.addClassName("search-bar__sort-container");
 
     getBoundComponent().addClassName("search-bar")
       .add(searchContainer, sortContainer);            

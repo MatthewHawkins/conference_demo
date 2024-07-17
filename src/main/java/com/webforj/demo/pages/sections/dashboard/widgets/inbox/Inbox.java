@@ -7,80 +7,83 @@ import com.webforj.component.html.event.HtmlClickEvent;
 
 
 public class Inbox extends Div {
-    Reply reply = new Reply();
 
-    public Inbox() {
-        Div card = new Div();
-        card.addClassName("card card--inbox");
+  Reply replay = new Reply();
 
-        Paragraph header = new Paragraph();
-        header.addClassName("card_header")
-            .setText("Inbox");
+  public Inbox() {
 
-        Div messagesWrapper = new Div();
-        messagesWrapper.addClassName("card_messagesWrapper");
+    Div card = new Div();
+    card.addClassName("card card--inbox");
 
-        add(card);
+    Paragraph header = new Paragraph();
+    header.addClassName("card__header");
+    header.setText("Inbox");
 
-        String[] names = {
-            "Nina Martí",
-            "Dragan Somma",
-            "Gwyn Lundgren",
-            "Luisa Mäkelä",
-            "Miguel Pinto",
-            "Paschalis Babineaux"
-        };
+    Div messagesWrapper = new Div();
+    messagesWrapper.addClassName("card__messagesWrapper");
 
-        String[] messages = {
-            "I've sent you the files for the...",
-            "This UI looks awesome! Can you...",
-            "Can you share the PSD file for...",
-            "Can we schedule a call this...",
-            "One of the simplest ways to...",
-            "Hey! I attached some new..."
-        };
+    add(card);
 
-        for (int i = 0; i < 6; i++) {
-            Div message = new Div();
-            message.addClassName("card_message")
-                .setUserData("title", names[i])
-                .setUserData("message", messages[i]);
-            message.onClick(this::handleMessageClick);
+    String[] names = {
+        "Nina Martí",
+        "Dragan  Somma",
+        "Gwyn Lundgren",
+        "Luisa  Mäkelä",
+        "Miguel  Pinto",
+        "Paschalis Babineaux"
+    };
 
-            Div avatar = new Div();
-            avatar.addClassName("card_messageAvatar");
-            int rnd = (int) (Math.random() *  100);
-            avatar.setHtml("<img alt='" + names[i] + "'' src='https://ui-avatars.com/api/?i='" + rnd + "&&background=random&&name=" + names[i] + "' />");
-            message.add(avatar);
+    String[] messages = {
+        "I've sent you the files for the...",
+        "This UI looks awesome! Can you...",
+        "Can you share the PSD file for...",
+        "Can we schedule a call this...",
+        "One of the simplest ways to...",
+        "Hey! I attached some new..."
+    };
 
-            Div wrapper = new Div();
-            wrapper.addClassName("card_messageWrapper");
+    for (int i = 0; i < 6; i++) {
+      Div message = new Div();
+      message.addClassName("card__message");
+      message.setUserData("title", names[i]);
+      message.setUserData("message", messages[i]);
+      message.onClick(this::handleMessageClick);
 
-            Strong name = new Strong();
-            name.addClassName("card_messageName");
-            name.setText(i > 2 ? names[i] : names[i] + " (2)");
-            wrapper.add(name);
+      Div avatar = new Div();
+      avatar.addClassName("card__messageAvatar");
+      int rnd = (int) (Math.random() * 100);
+      avatar.setHtml("<img alt='" + names[i] + "'' src='https://ui-avatars.com/api/?i=" + rnd
+          + "&&background=random&&name=" + names[i]
+          + "' />");
+      message.add(avatar);
 
-            Paragraph content = new Paragraph();
-            content.addClassName("card_messageContent")
-                .setText(messages[i]);
-            wrapper.add(content);
+      Div wrapper = new Div();
+      wrapper.addClassName("card__messageWrapper");
 
-            message.add(wrapper);
-            messagesWrapper.add(message);
-        }
+      Strong name = new Strong();
+      name.addClassName("card__messageName");
+      name.setText(i > 2 ? names[i] : names[i] + " (2)");
+      wrapper.add(name);
 
-        card.add(header, messagesWrapper);
+      Paragraph content = new Paragraph();
+      content.addClassName("card__messageContent");
+      content.setText(messages[i]);
+      wrapper.add(content);
+
+      message.add(wrapper);
+      messagesWrapper.add(message);
     }
 
-    private void handleMessageClick(HtmlClickEvent event) {
-        Div message = (Div) event.getComponent();
-        String title = (String) message.getUserData("title");
-        String messageText = (String) message.getUserData("message");
+    card.add(header, messagesWrapper);
+  }
 
-        add(reply);
-        reply.show(title, messageText);
+  private void handleMessageClick(HtmlClickEvent event) {
+    Div message = (Div) event.getComponent();
+    String title = (String) message.getUserData("title");
+    String messageText = (String) message.getUserData("message");
 
-    }
-    
+    add(replay);
+    replay.show(title, messageText);
+
+  }
 }

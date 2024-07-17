@@ -14,48 +14,48 @@ import com.webforj.utilities.Assets;
 
 public final class LifetimeSales extends Div {
     
-    public LifetimeSales() {
-        addClassName("chartsWrapper_chart card card--lifetimeSales");
+  public LifetimeSales() {
+    addClassName("chartsWrapper_chart card card--lifetimeSales");
 
-        Paragraph header = new Paragraph();
-        header.addClassName("card_header")
-            .setText("Lifetime Sales");
-        add(header);
+    Paragraph header = new Paragraph();
+    header.addClassName("card_header")
+      .setText("Lifetime Sales");
+    add(header);
 
-        GoogleChart chart = new GoogleChart();
-        chart.setType(GoogleChart.Type.AREA)
-            .setStyle("width", "100%");
+    GoogleChart chart = new GoogleChart();
+    chart.setType(GoogleChart.Type.AREA)
+      .setStyle("width", "100%");
 
-        Map<String, Object> options = new Gson().fromJson(Assets.contentOf("public/charts.json"), new TypeToken<Map<String, Object>>(){}.getType());
+    Map<String, Object> options = new Gson().fromJson(Assets.contentOf("public/charts.json"), new TypeToken<Map<String, Object>>(){}.getType());
 
-        chart.setOptions(options);
+    chart.setOptions(options);
 
-        // data [cols, rows]
-        List<Object> data = new ArrayList<>();
+    // data [cols, rows]
+    List<Object> data = new ArrayList<>();
 
-        List<Map<String, String>> cols = new ArrayList<>();
-        String[] colNames = new String[] { "Year", "Sales", "Expenses" };
-        String[] colTypes = new String[] { "string", "number", "number" };
+    List<Map<String, String>> cols = new ArrayList<>();
+    String[] colNames = new String[] { "Year", "Sales", "Expenses" };
+    String[] colTypes = new String[] { "string", "number", "number" };
 
-        for (int i = 0; i < colNames.length; i++) {
-            Map<String, String> col = new HashMap<>();
-            col.put("label", colNames[i]);
-            col.put("type", colTypes[i]);
-            cols.add(col);
-        }
-
-        data.add(cols);
-
-        // rows
-        for (int i = 0; i < 5; i++) {
-            List<Object> row = new ArrayList<>();
-            row.add(2018 + i);
-            row.add(Math.random() * 8000);
-            row.add(Math.random() * 8000);
-            data.add(row);
-        }
-
-        chart.setData(data);
-        add(chart);
+    for (int i = 0; i < colNames.length; i++) {
+      Map<String, String> col = new HashMap<>();
+      col.put("label", colNames[i]);
+      col.put("type", colTypes[i]);
+      cols.add(col);
     }
+
+    data.add(cols);
+
+    // rows
+    for (int i = 0; i < 5; i++) {
+        List<Object> row = new ArrayList<>();
+        row.add(2018 + i);
+        row.add(Math.random() * 8000);
+        row.add(Math.random() * 8000);
+        data.add(row);
+    }
+
+    chart.setData(data);
+    add(chart);
+  }
 }
