@@ -242,6 +242,17 @@
     color: var(--dwc-color-gray-50);
   }
 
+  .button__team-card-close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    color: var(--dwc-color-primary-text);
+  }
+
+  .button__team-card-close:hover {
+    cursor: pointer;
+  }
+
   .card {
     display: flex;
     flex-direction: column;

@@ -7,6 +7,7 @@ import com.webforj.component.dialog.Dialog;
 import com.webforj.component.html.elements.Div;
 import com.webforj.component.html.elements.Img;
 import com.webforj.component.html.elements.Paragraph;
+import com.webforj.component.html.elements.Span;
 import com.webforj.component.html.elements.Strong;
 
 public class TeamCardWrapper extends Div implements CardClickListener {
@@ -21,9 +22,12 @@ public class TeamCardWrapper extends Div implements CardClickListener {
     Dialog dialog = new Dialog();
     Img img = new Img(card.getAvatar().getSrc(), "Avatar");
     img.addClassName("team--avatar");
-    // Button exit = new Button("<html><dwc-icon name='square-letter-x'></dwc-icon></html>")
-    //   .addClassName("button__team-card-close");
-    // dialog.addToHeader(img, exit);
+
+    Span exit = new Span()
+      .addClassName("button__team-card-close")
+      .setHtml("<dwc-icon name='x'></dwc-icon>");
+    exit.onClick(event -> {dialog.close();});
+
     Strong name = new Strong();
     name.addClassName("team--username")
       .setText(card.getUserName().getText());
@@ -33,7 +37,7 @@ public class TeamCardWrapper extends Div implements CardClickListener {
 
 
     dialog.addClassName("contact--info")
-      .add(img, name, position);
+      .add(img, exit, name, position);
 
     add(dialog);
     dialog.open();
