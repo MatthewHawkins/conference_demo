@@ -82,6 +82,7 @@ public class Reply extends Composite<Dialog> {
       subject.setVisible(true);
       text.setVisible(true);
       send.setVisible(true);
+      headerDiv.removeClassName("message-sent");
     }
     to.setText("");
     subject.setText("");
