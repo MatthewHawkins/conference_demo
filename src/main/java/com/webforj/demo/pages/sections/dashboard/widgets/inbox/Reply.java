@@ -11,18 +11,19 @@ import com.webforj.component.button.event.ButtonClickEvent;
 
 import static com.webforj.component.button.ButtonTheme.PRIMARY;
 
-public class Reply extends Composite<Dialog> {
+import com.webforj.App;
 
+public class Reply extends Composite<Dialog> {
   Dialog self = getBoundComponent();
   TextField to = new TextField();
   TextField subject = new TextField();
   TextArea text = new TextArea();
-  Div headerDiv = new Div();
   String initialHeader = "<dwc-icon name='send'></dwc-icon> Reply To Message";
+  Div headerDiv = new Div();
   String sentHeader = "Message sent!";
   Button send = new Button("Send");
   Button cancel = new Button("Cancel");
-
+  
   public Reply() {
     headerDiv.setHtml(initialHeader);
     self.addToHeader(headerDiv);
@@ -75,6 +76,12 @@ public class Reply extends Composite<Dialog> {
       cancel.setText("Close");
     } else {
       self.close();
+      App.consoleLog("self: " + self.getComponentId());
+      headerDiv.setHtml(initialHeader);
+      to.setVisible(true);
+      subject.setVisible(true);
+      text.setVisible(true);
+      send.setVisible(true);
     }
     to.setText("");
     subject.setText("");
