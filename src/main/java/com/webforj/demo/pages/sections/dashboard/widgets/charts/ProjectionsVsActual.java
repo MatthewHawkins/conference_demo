@@ -17,10 +17,10 @@ import com.webforj.utilities.Assets;
 public final class ProjectionsVsActual extends Div {
 
   public ProjectionsVsActual() {
-    addClassName("chartsWrapper_chart card card--projectionsVsActualsChart");
+    addClassName("chartsWrapper__chart card card--projectionsVsActualsChart");
 
     Paragraph header = new Paragraph();
-    header.addClassName("card_header")
+    header.addClassName("card__header")
       .setText("Projections Vs Actual");
     add(header);
 

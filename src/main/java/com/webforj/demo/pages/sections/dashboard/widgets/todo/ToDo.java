@@ -24,6 +24,7 @@ public class ToDo extends Div {
     repository.addItem("Start preparing your presentation", true);
     repository.addItem("Build your demo application", true);
     repository.addItem("Book a demo for webforj");
+    repository.addItem("Prepare for meeting with the boss");
 
     card.add(
         new ToDoToolbar(repository),

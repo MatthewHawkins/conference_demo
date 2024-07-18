@@ -14,10 +14,10 @@ import com.webforj.utilities.Assets;
 public final class RevenueLocation extends Div {
   
   public RevenueLocation() {
-    addClassName("chartsWrapper_chart card card--revenueLocation");
+    addClassName("chartsWrapper__chart card card--revenueLocation");
 
     Paragraph header = new Paragraph();
-    header.addClassName("card_header");
+    header.addClassName("card__header");
     header.setText("Revenue By Location");
     add(header);
 

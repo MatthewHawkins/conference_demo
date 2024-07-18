@@ -67,6 +67,7 @@
   ================ */
   .card--todo {
     max-height: 450px;
+    margin-bottom: 35px;
   }
   
   .todo__toolbar {
@@ -98,7 +99,7 @@
     flex-direction: column;
     gap: var(--dwc-space-s);
     flex: 1;
-    max-height: 450px;
+    max-height: 262px;
     overflow: auto !important;
   }
   
@@ -110,6 +111,7 @@
   ================ */
   .card--inbox {
     max-height: 450px;
+    margin-bottom: 35px;
   }
   
   .card__messagesWrapper {
@@ -215,4 +217,32 @@
   
   .team--position {
     color: var(--dwc-color-gray-50);
+  }
+
+  .card {
+    display: flex;
+    flex-direction: column;
+    gap: var(--dwc-space-m);
+    padding: var(--dwc-space-m);
+    border-radius: var(--dwc-border-radius-m);
+    background-color: var(--dwc-surface-3);
+    box-shadow: var(--dwc-shadow-1);
+  }
+
+  .page {
+    display: flex;
+    flex-direction: column;
+    gap: var(--dwc-space-m);
+    margin: 0 auto;
+    height: auto !important;
+    overflow: visible !important;
+    max-width: 1200px;
+  }
+
+  .card__header {
+    display: flex;
+    flex-direction: column;
+    gap: var(--dwc-space-m);
+    font-size: var(--dwc-font-size-l);
+    font-weight: bold;
   }

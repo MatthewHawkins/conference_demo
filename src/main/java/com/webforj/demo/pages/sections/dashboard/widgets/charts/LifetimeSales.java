@@ -15,10 +15,10 @@ import com.webforj.utilities.Assets;
 public final class LifetimeSales extends Div {
     
   public LifetimeSales() {
-    addClassName("chartsWrapper_chart card card--lifetimeSales");
+    addClassName("chartsWrapper__chart card card--lifetimeSales");
 
     Paragraph header = new Paragraph();
-    header.addClassName("card_header")
+    header.addClassName("card__header")
       .setText("Lifetime Sales");
     add(header);
 

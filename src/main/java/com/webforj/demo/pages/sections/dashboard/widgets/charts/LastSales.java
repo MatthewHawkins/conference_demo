@@ -16,10 +16,10 @@ import com.webforj.utilities.Assets;
 public final class LastSales extends Div {
     
   public LastSales() {
-    addClassName("charsWrapper_chart card card--lastSales");
+    addClassName("chartsWrapper__chart card card--lastSales");
 
     Paragraph header = new Paragraph();
-    header.addClassName("card_header")
+    header.addClassName("card__header")
       .setText("Sales Last Quarter");
     add(header);
 
