@@ -17,13 +17,13 @@ public final class RevenueLocation extends Div {
     addClassName("chartsWrapper__chart card card--revenueLocation");
 
     Paragraph header = new Paragraph();
-    header.addClassName("card__header");
-    header.setText("Revenue By Location");
+    header.addClassName("card__header")
+      .setText("Revenue By Location");
     add(header);
 
     GoogleChart chart = new GoogleChart();
-    chart.setType(GoogleChart.Type.GEO);
-    chart.setStyle("width", "100%");
+    chart.setType(GoogleChart.Type.GEO)
+      .setStyle("width", "100%");
 
     // options
     Map<String, Object> options = new Gson().fromJson(Assets.contentOf("public/charts.json"), new TypeToken<Map<String, Object>>(){}.getType());

@@ -16,8 +16,8 @@ public final class ToDoItem {
    * @param completed the completed state to set
    */
   public ToDoItem(String text, boolean completed) {
-    this.setText(text);
-    this.setCompleted(completed);
+    this.setText(text)
+      .setCompleted(completed);
   }
 
   /**

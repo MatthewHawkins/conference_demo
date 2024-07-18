@@ -15,11 +15,11 @@ public class Inbox extends Div {
     Div card = new Div();
     card.addClassName("card card--inbox");
 
-    Paragraph header = new Paragraph("Inbox");
-    header.addClassName("card__header");
+    Paragraph header = new Paragraph("Inbox")
+      .addClassName("card__header");  
 
-    Div messagesWrapper = new Div();
-    messagesWrapper.addClassName("card__messagesWrapper");
+    Div messagesWrapper = new Div()
+      .addClassName("card__messagesWrapper");
 
     add(card);
 
@@ -43,10 +43,10 @@ public class Inbox extends Div {
 
     for (int i = 0; i < 6; i++) {
       Div message = new Div();
-      message.setUserData("title", names[i]);
-      message.setUserData("message", messages[i]);
-      message.onClick(this::handleMessageClick);
-      message.addClassName("card__message");
+      message.setUserData("title", names[i])
+      .setUserData("message", messages[i]);
+      message.addClassName("card__message")
+        .onClick(this::handleMessageClick);
 
       Div avatar = new Div();
       avatar.addClassName("card__messageAvatar");
@@ -86,5 +86,5 @@ public class Inbox extends Div {
     }
     reply.show(title, messageText);
   }
-  
+
 }

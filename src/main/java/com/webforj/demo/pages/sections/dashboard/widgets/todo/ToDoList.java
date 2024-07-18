@@ -23,8 +23,8 @@ public class ToDoList extends Div {
   public ToDoList(ToDoRepository repository) {
     this.repository = repository;
     this.repository.addChangeListener(new RepositoryChangeListener());
-    list = new Div();
-    list.addClassName("todo__list");
+    list = new Div()
+      .addClassName("todo__list");
     repository.getItems().forEach(item -> {
       addCheckbox(item);
     });
@@ -33,11 +33,10 @@ public class ToDoList extends Div {
   }
 
   private void addCheckbox(ToDoItem item) {
-    CheckBox checkBox = new CheckBox();
+    CheckBox checkBox = new CheckBox(item.getText())
+      .setChecked(item.isCompleted())
+      .addClassName("todo__item");
     checkBox.setUserData("id", item.getId());
-    checkBox.setText(item.getText());
-    checkBox.setChecked(item.isCompleted());
-    checkBox.addClassName("todo__item");
     checkBox.onToggle(e -> {
       item.setCompleted(checkBox.isChecked());
     });

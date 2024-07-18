@@ -19,16 +19,16 @@ public final class ToDoInput extends Div {
   }
   public ToDoInput(ToDoRepository repository) {
     this.repository = repository;
-    Div wrapper = new Div();
-    wrapper.addClassName("todo__inputWrapper");
+    Div wrapper = new Div()
+      .addClassName("todo__inputWrapper");
 
-    TextField input = new TextField();
-    input.addClassName("todo__input");
-    input.setPlaceholder("What needs to be done?");
+    TextField input = new TextField()
+      .addClassName("todo__input")
+      .setPlaceholder("What needs to be done?");
 
-    Button button = new Button("Add");
-    button.setTheme(PRIMARY);
-    button.addClassName("todo__button");
+    Button button = new Button("Add")
+      .setTheme(PRIMARY)
+      .addClassName("todo__button");
     button.onClick(e -> {
       repository.addItem(input.getText());
       input.setText("");

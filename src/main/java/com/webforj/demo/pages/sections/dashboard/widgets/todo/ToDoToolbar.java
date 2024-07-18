@@ -23,14 +23,14 @@ public class ToDoToolbar extends Div {
     this.repository = repository;
     this.repository.addChangeListener(new RepositoryChangeListener());
 
-    toDoToolbar = new Div();
-    toDoToolbar.addClassName("todo__toolbar");
+    toDoToolbar = new Div()
+      .addClassName("todo__toolbar");
 
-    remainingItems = new Paragraph("");
-    remainingItems.addClassName("todo__remainingItems");
+    remainingItems = new Paragraph("")
+      .addClassName("todo__remainingItems");
 
-    Button clearCompleted = new Button("Archive");
-    clearCompleted.setTheme(OUTLINED_PRIMARY);
+    Button clearCompleted = new Button("Archive")
+      .setTheme(OUTLINED_PRIMARY);
     clearCompleted.onClick(e -> {
       repository.removeCompletedItems();
     });

@@ -10,19 +10,19 @@ import com.webforj.demo.pages.sections.dashboard.widgets.table.Service;
 public final class TopSelling extends Div {
 
   public TopSelling() {
-    Div card = new Div();
-    card.addClassName("card card--topSelling");
+    Div card = new Div()
+      .addClassName("card card--topSelling");
 
-    Paragraph header = new Paragraph();
-    header.addClassName("card__header");
-    header.setText("Top Selling Products");
+    Paragraph header = new Paragraph("Top Selling Products")
+      .addClassName("card__header")
+      .setText("Top Selling Products");
     card.add(header);
 
     Table<ProductRecord> table = new Table<>();
-    table.setStyle("width", "100%");
-    table.setStyle("height", "542px");
-    table.setRowHeight(60.0);
-    table.setHeaderHeight(60.0);
+    table.setStyle("width", "100%")
+      .setStyle("height", "542px")
+      .setRowHeight(60.0)
+      .setHeaderHeight(60.0);
 
     table.addColumn("ProductName", ProductRecord::getProduct).setHidden(true);
     table.addColumn("Product", new AvatarRenderer());
@@ -38,8 +38,8 @@ public final class TopSelling extends Div {
       column.setSortable(true);
     });
 
-    table.setRepository(Service.getProductRecords());
-    table.addClassName("table");
+    table.setRepository(Service.getProductRecords())
+      .addClassName("table");
     card.add(table);
 
     add(card);

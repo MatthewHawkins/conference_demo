@@ -10,9 +10,8 @@ public class ToDo extends Div {
     Div card = new Div();
     card.addClassName("card card--todo");
 
-    Paragraph header = new Paragraph();
-    header.addClassName("card__header");
-    header.setText("Todo");
+    Paragraph header = new Paragraph("To Do")
+      .addClassName("card__header");
     card.add(header);
 
     ToDoRepository repository = new ToDoRepository();
