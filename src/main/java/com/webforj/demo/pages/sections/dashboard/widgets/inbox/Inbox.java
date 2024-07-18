@@ -8,10 +8,9 @@ import com.webforj.component.html.event.HtmlClickEvent;
 
 public class Inbox extends Div {
 
-  Reply replay = new Reply();
+  Reply reply = new Reply();
 
   public Inbox() {
-
     Div card = new Div();
     card.addClassName("card card--inbox");
 
@@ -82,8 +81,8 @@ public class Inbox extends Div {
     String title = (String) message.getUserData("title");
     String messageText = (String) message.getUserData("message");
 
-    add(replay);
-    replay.show(title, messageText);
+    add(reply);
+    reply.show(title, messageText);
 
   }
 }

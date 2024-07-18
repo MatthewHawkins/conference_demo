@@ -167,11 +167,25 @@
   .dialog--reply .dialog__content {
     display: flex;
     flex-direction: column;
-    gap: var(--dwc-space-s);
+    gap: var(--dwc-space-m);
+  }
+
+  .dialog--reply::part(dialog) {
+    padding-bottom: 3px;
   }
   
   .dialog__message::part(input) {
     overflow: visible;
+  }
+
+  .button__reply {
+    background: rgba(0,0,0,0);
+    margin-bottom: 12px;
+  }
+
+  .button__reply::part(control) {
+    padding: 20px;
+    /* margin: var(--dwc-space-m); */
   }
   
   /* TeamCard Widget
@@ -246,3 +260,4 @@
     font-size: var(--dwc-font-size-l);
     font-weight: bold;
   }
+

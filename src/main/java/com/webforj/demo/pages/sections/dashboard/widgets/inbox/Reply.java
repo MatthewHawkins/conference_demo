@@ -40,10 +40,12 @@ public class Reply extends Composite<Dialog> {
 
     Button send = new Button("Send");
     send.setTheme(PRIMARY);
+    send.addClassName("button__reply");
     send.onClick(this::handleButtonClick);
   
     Button cancel = new Button("Cancel");
     cancel.onClick(this::handleButtonClick);
+    cancel.addClassName("button__reply");
   
     self.addToFooter(send, cancel);
   }
@@ -53,7 +55,7 @@ public class Reply extends Composite<Dialog> {
    */
   public void show(String to, String text) {
     this.to.setText(to);
-    this.text.setText("> " + text + "\n");
+    this.text.setText(text + "\n");
     self.open();
   }
 
