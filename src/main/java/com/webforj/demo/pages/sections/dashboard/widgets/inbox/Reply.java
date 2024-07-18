@@ -5,6 +5,7 @@ import com.webforj.component.button.Button;
 import com.webforj.component.dialog.Dialog;
 import com.webforj.component.field.TextField;
 import com.webforj.component.html.elements.Div;
+import com.webforj.component.html.elements.Span;
 import com.webforj.component.textarea.TextArea;
 import com.webforj.component.button.event.ButtonClickEvent;
 
@@ -16,9 +17,15 @@ public class Reply extends Composite<Dialog> {
   TextField to = new TextField();
   TextField subject = new TextField();
   TextArea text = new TextArea();
+  Div headerDiv = new Div();
+  String initialHeader = "<dwc-icon name='send'></dwc-icon> Reply To Message";
+  String sentHeader = "Message sent!";
+  Button send = new Button("Send");
+  Button cancel = new Button("Cancel");
 
   public Reply() {
-    self.addToHeader(new Div().setHtml("<dwc-icon name='send'></dwc-icon> Reply To Message"));
+    headerDiv.setHtml(initialHeader);
+    self.addToHeader(headerDiv);
     self.setAlignment(Dialog.Alignment.TOP);
     self.setMaxWidth("450px");
     self.addClassName("dialog--reply");
@@ -38,12 +45,10 @@ public class Reply extends Composite<Dialog> {
         .add(to, subject, text);
     self.addToContent(dialogContent);
 
-    Button send = new Button("Send");
     send.setTheme(PRIMARY);
     send.addClassName("button__reply");
     send.onClick(this::handleButtonClick);
   
-    Button cancel = new Button("Cancel");
     cancel.onClick(this::handleButtonClick);
     cancel.addClassName("button__reply");
   
@@ -60,7 +65,17 @@ public class Reply extends Composite<Dialog> {
   }
 
   private void handleButtonClick(ButtonClickEvent event) {
-    self.close();
+    if (event.getComponent().getText().equals("Send")) {
+      headerDiv.setHtml(sentHeader);
+      headerDiv.addClassName("message-sent");
+      to.setVisible(false);
+      subject.setVisible(false);
+      text.setVisible(false);
+      send.setVisible(false);
+      cancel.setText("Close");
+    } else {
+      self.close();
+    }
     to.setText("");
     subject.setText("");
     text.setText("");

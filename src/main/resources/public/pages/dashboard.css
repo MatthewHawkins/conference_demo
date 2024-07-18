@@ -173,6 +173,10 @@
   .dialog--reply::part(dialog) {
     padding-bottom: 3px;
   }
+
+  .dialog--reply::slot(header) {
+    border-bottom: none;
+  }
   
   .dialog__message::part(input) {
     overflow: visible;
@@ -186,6 +190,11 @@
   .button__reply::part(control) {
     padding: 20px;
     /* margin: var(--dwc-space-m); */
+  }
+
+  .message-sent {
+    display: flex;
+    justify-content: center;
   }
   
   /* TeamCard Widget
