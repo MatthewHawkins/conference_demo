@@ -10,6 +10,9 @@ import com.webforj.component.button.event.ButtonClickEvent;
 
 import static com.webforj.component.button.ButtonTheme.PRIMARY;
 
+import java.util.Timer;
+import java.util.TimerTask;
+
 import com.webforj.App;
 
 public class Reply extends Composite<Dialog> {
@@ -20,6 +23,7 @@ public class Reply extends Composite<Dialog> {
   Div headerDiv = new Div();
   String initialHeader = "<dwc-icon name='send'></dwc-icon> Reply To Message";
   String sentHeader = "Message sent!";
+  Div noSubject = new Div("Subject line cannot be blank");
   Button send = new Button("Send");
   Button cancel = new Button("Cancel");
   
@@ -51,8 +55,10 @@ public class Reply extends Composite<Dialog> {
   
     cancel.addClassName("button__reply")
       .onClick(this::handleButtonClick);
-  
-    self.addToFooter(send, cancel);
+
+    noSubject.addClassName("reply-form__no-subject-warning");
+
+    self.addToFooter(noSubject, send, cancel);
   }
 
   /**
@@ -66,13 +72,27 @@ public class Reply extends Composite<Dialog> {
 
   private void handleButtonClick(ButtonClickEvent event) {
     if (event.getComponent().getText().equals("Send")) {
-      headerDiv.setHtml(sentHeader)
-        .addClassName("message-sent");
-      to.setVisible(false);
-      subject.setVisible(false);
-      text.setVisible(false);
-      send.setVisible(false);
-      cancel.setText("Close");
+      if (subject.getText().length() > 0) {
+        headerDiv.setHtml(sentHeader)
+          .addClassName("message-sent");
+        to.setVisible(false);
+        subject.setVisible(false);
+        text.setVisible(false);
+        send.setVisible(false);
+        cancel.setText("Close");
+      } else {
+        noSubject.setStyle("display", "block");
+        self.addClassName("reply-form-container__no-subject");
+        new Timer().schedule(
+          new TimerTask() {
+            @Override
+            public void run() {
+              noSubject.setStyle("display", "none");
+              self.removeClassName("reply-form-container__no-subject");
+            }
+          }, 2000
+        );
+      }
     } else {
       self.close();
       headerDiv.setHtml(initialHeader)
@@ -82,8 +102,10 @@ public class Reply extends Composite<Dialog> {
       text.setVisible(true);
       send.setVisible(true);
     }
-    to.setText("");
-    subject.setText("");
-    text.setText("");
+    if (subject.getText().length() > 0) {
+      to.setText("");
+      subject.setText("");
+      text.setText("");
+    }
   }
 }
