@@ -47,12 +47,9 @@ public class ProductControls extends Div {
       .addClassName("like-button");
 
     likeButton.addClickListener(e -> {
-      String buttonText = likeButton.getText();
-      if (buttonText.equals(heartIconHtml)) {
-        likeButton.setText(heartFilledIconHtml);
-      } else {
-        likeButton.setText(heartIconHtml);
-      }
+      String currentButtonText = likeButton.getText();
+      String newButtonText = currentButtonText.equals(heartIconHtml) ? heartFilledIconHtml : heartIconHtml;
+      likeButton.setText(newButtonText);
     });
 
 
