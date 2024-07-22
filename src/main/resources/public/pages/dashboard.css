@@ -196,6 +196,7 @@
     display: none;
     color: red;
     text-align: center;
+    background-color: transparent;
   }
   
   .reply-form-container__no-subject {
