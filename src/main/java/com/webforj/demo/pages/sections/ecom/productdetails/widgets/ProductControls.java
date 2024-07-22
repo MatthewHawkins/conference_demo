@@ -40,7 +40,7 @@ public class ProductControls extends Div {
 
     Div menuButtons = new Div();
     Div optionButtons = new Div();
-    // String iconName = "heart";
+
     String heartIconHtml = "<html><dwc-icon name='heart' expanse='s'></dwc-icon></html>";
     String heartFilledIconHtml = "<html><dwc-icon name='heart-filled' expanse='s'></dwc-icon></html>";
     Button likeButton = new Button(heartIconHtml)
