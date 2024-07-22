@@ -2,6 +2,8 @@ package com.webforj.demo.pages.sections.ecom.productdetails.widgets;
 
 import java.util.ArrayList;
 
+import com.webforj.App;
+import com.webforj.component.Component;
 import com.webforj.component.button.Button;
 import com.webforj.component.html.elements.Div;
 import com.webforj.component.list.ChoiceBox;
@@ -38,12 +40,21 @@ public class ProductControls extends Div {
 
     Div menuButtons = new Div();
     Div optionButtons = new Div();
-    Button likeButton = new Button("""
-      <html>
-        <dwc-icon name='heart' expanse='s'></dwc-icon>
-      </html>
-    """)
+    // String iconName = "heart";
+    String heartIconHtml = "<html><dwc-icon name='heart' expanse='s'></dwc-icon></html>";
+    String heartFilledIconHtml = "<html><dwc-icon name='heart-filled' expanse='s'></dwc-icon></html>";
+    Button likeButton = new Button(heartIconHtml)
       .addClassName("like-button");
+
+    likeButton.addClickListener(e -> {
+      String buttonText = likeButton.getText();
+      if (buttonText.equals(heartIconHtml)) {
+        likeButton.setText(heartFilledIconHtml);
+      } else {
+        likeButton.setText(heartIconHtml);
+      }
+    });
+
 
     Button cartButton = new Button("Add To Cart")
       .addClassName("add-to-cart-button");
@@ -56,5 +67,4 @@ public class ProductControls extends Div {
     this.add(menuButtons, optionButtons);
     this.addClassName("controls-container");
   }
-
 }

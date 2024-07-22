@@ -203,7 +203,8 @@
   }
   
   .like-button::part(control) {
-    background-color: #f1556c;
+    /* background-color: #f1556c; */
+    background-color: transparent;
     --dwc-button-border-color: transparent;
     svg {
       color: #353c48;
@@ -213,7 +214,8 @@
     border-color: transparent;
   }
   .like-button::part(label) {
-    color: white;
+    /* color: white; */
+    color: #f1556c;
   }
   
   .add-to-cart-button::part(control) {
