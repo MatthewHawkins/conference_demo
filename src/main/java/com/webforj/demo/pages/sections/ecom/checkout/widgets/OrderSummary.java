@@ -10,9 +10,9 @@ public class OrderSummary extends Div {
   private Paragraph name1 = new Paragraph("Polo Navy Blue T-Shirt");
   private Paragraph name2 = new Paragraph("Red Hoodie for Men");
   private Paragraph name3 = new Paragraph("Designer Awesome T-Shirt");
-  private Img image1 = new Img("context://public/img/product-1.png");
-  private Img image2 = new Img("context://public/img/product-2.png");
-  private Img image3 = new Img("context://public/img/product-3.png");
+  private Img image1 = new Img("context://public/img/product-1.webp");
+  private Img image2 = new Img("context://public/img/product-2.webp");
+  private Img image3 = new Img("context://public/img/product-3.webp");
   private Span quantityAndPrice1 = new Span("1 x $39");
   private Span quantityAndPrice2 = new Span("2 x $98");
   private Span quantityAndPrice3 = new Span("1 x $49");

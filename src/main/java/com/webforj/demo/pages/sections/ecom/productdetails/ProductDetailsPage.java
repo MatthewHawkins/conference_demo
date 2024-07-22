@@ -13,10 +13,10 @@ public class ProductDetailsPage extends Div{
     productDetailTitle.addClassName("page-title");
 
     String[] imageUrls = {
-      "context://public/img/thumbnail-1.jpeg",
-      "context://public/img/thumbnail-2.jpeg",
-      "context://public/img/thumbnail-3.jpeg",
-      "context://public/img/thumbnail-4.jpeg",
+      "context://public/img/thumbnail-1.webp",
+      "context://public/img/thumbnail-2.webp",
+      "context://public/img/thumbnail-3.webp",
+      "context://public/img/thumbnail-4.webp",
     };
 
     ProductImage productImage = new ProductImage(imageUrls);
