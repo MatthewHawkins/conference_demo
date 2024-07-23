@@ -28,7 +28,7 @@ public class ContentDisplay extends Composite<Div> {
     self.setStyle("height", "100%");
 
     initRoutes();
-    router.navigate();
+    handleInitialRoute();
   }
 
   private void initRoutes() {
@@ -37,6 +37,13 @@ public class ContentDisplay extends Composite<Div> {
         "dashboard/*",
         "ecom/*",
         "docs/*");
+  }
+
+  private void handleInitialRoute() {
+    String currentRoute = router.getCurrentRoute();
+    if (currentRoute == null || !currentRoute.equals("home/*")) {
+      router.navigate("home/*");
+    } 
   }
 
   private void onRouteMatch(SimpleRouteMatchEvent ev) {
