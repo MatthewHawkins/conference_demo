@@ -157,7 +157,6 @@ public class BillingInfo extends Div {
 
         populateStates();
         populateCountries();
-
         
         FlexLayout rowOne = FlexLayout.create(mailingTitle, mailingSubtitle)
           .vertical()
@@ -207,8 +206,8 @@ public class BillingInfo extends Div {
       mailingFirstName.setText("");
       mailingLastName.setText("");
       mailingPhone.setText("");
-      mailingCountries.setText("");
-      mailingStates.setText("");
+      mailingCountries.deselect();
+      mailingStates.deselect();
     }
   }
 
