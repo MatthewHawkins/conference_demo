@@ -309,6 +309,10 @@
     margin: 10px;
     margin-left: 70px;
   }
+
+  .customer-info__zip-code::part(input) {
+    text-align: left;
+  }
   
   .order-summary {
     margin-top: 30px;

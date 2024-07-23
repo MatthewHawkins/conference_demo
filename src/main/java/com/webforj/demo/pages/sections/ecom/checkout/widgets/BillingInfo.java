@@ -51,7 +51,8 @@ public class BillingInfo extends Div {
   private void createBillingForm() {
     this.setStyle("display", "flex");
     this.setStyle("flex-direction", "column");
-    zip.setAttribute("label", "Zip Code");
+    zip.setAttribute("label", "Zip Code")
+      .addClassName("customer-info__zip-code");
 
     diffAddress.setText("Ship to different address");
     diffAddress.addToggleListener(this::createMailingForm);
@@ -153,7 +154,8 @@ public class BillingInfo extends Div {
   private void createMailingForm(ToggleEvent e) {
     if (e.isToggled()) {
       if (mailingStates.isEmpty() || mailingCountries.isEmpty()) {
-        mailingZip.setAttribute("label", "Zip Code");
+        mailingZip.setAttribute("label", "Zip Code")
+          .addClassName("customer-info__zip-code");
 
         populateStates();
         populateCountries();
