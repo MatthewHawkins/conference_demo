@@ -66,7 +66,7 @@ public class BillingInfo extends Div {
       </html>
     """)
       .setTheme(ButtonTheme.GRAY)
-      .addClassName("button-cancel");  
+      .addClassName("button__cancel");  
 
     // back.setHtml("""
     //     <div style='text-align: center;'>
@@ -86,7 +86,7 @@ public class BillingInfo extends Div {
       </html>
     """)
       .setTheme(ButtonTheme.SUCCESS)
-      .addClassName("button-submit");
+      .addClassName("button__submit");
 
     // submit.setHtml("""
     //   <div style='text-align: center;'>
@@ -135,7 +135,7 @@ public class BillingInfo extends Div {
       mainLayout = FlexLayout.create(rowOne, rowTwo, address, rowThree, rowFour, countries, diffAddress)
         .vertical() 
         .build()
-        .addClassName("billing-info order-div-1")
+        .addClassName("layout__billing-info")
         .setStyle("gap", "40px")
         .setStyle("order", "1");
       
@@ -143,7 +143,7 @@ public class BillingInfo extends Div {
         .horizontal()
         .justify().between()
         .build()
-        .addClassName("billing-info")
+        .addClassName("layout__billing-info")
         .setStyle("margin-top", "30px")
         .setStyle("order", "3");
 
@@ -192,7 +192,7 @@ public class BillingInfo extends Div {
         mailingLayout = FlexLayout.create(rowOne, rowTwo, mailingAddress, rowThree, rowFour, mailingCountries)
           .vertical() 
           .build()
-          .addClassName("billing-info order-div-2")
+          .addClassName("layout__billing-info")
           .setStyle("gap", "40px")
           .setStyle("order", "2");
 

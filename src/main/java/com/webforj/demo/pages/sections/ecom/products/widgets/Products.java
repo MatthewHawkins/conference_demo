@@ -6,7 +6,7 @@ import com.webforj.component.html.elements.Img;
 public  final class Products extends Div {
 
   public Products() {
-    this.addClassName("carddisplay");
+    this.addClassName("products__item-card-display");
 
     this.add(new ItemCard("Jones Men's T-shirt (Blue)", new Img ("context://public/img/product-1.webp"), "$39", "★★★★☆", "98 pcs"));
     this.add(new ItemCard("Brown Hoodie for Men", new Img ("context://public/img/product-2.webp"), "$98", "★★★★☆", "56 pcs"));
