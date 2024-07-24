@@ -42,7 +42,7 @@ public class ContentDisplay extends Composite<Div> {
   private void handleInitialRoute() {
     String currentRoute = router.getCurrentRoute();
     if (currentRoute == null || !currentRoute.equals("home/*")) {
-      router.navigate("home/*");
+      router.navigate("home");
     } 
   }
 
