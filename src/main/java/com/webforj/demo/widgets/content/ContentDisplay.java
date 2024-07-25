@@ -45,8 +45,9 @@ public class ContentDisplay extends Composite<Div> {
 
   private void handleInitialRoute() {
     String currentPath = App.getUrl(); 
-    String newPath = currentPath.replaceAll(".*/([^/?#]+).*", "$1");
-    router.navigate(newPath);
+    // String currentPath = Request.getUrl(); 
+    String route = currentPath.replaceAll(".*/([^/?#]+).*", "$1");
+    router.navigate(route);
   }
 
   private void onRouteMatch(SimpleRouteMatchEvent ev) {

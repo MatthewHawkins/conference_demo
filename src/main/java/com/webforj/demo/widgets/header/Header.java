@@ -59,11 +59,11 @@ public class Header extends Composite<Div> {
 
     String currentPath = App.getUrl(); 
     // String currentPath = Request.getUrl(); 
-    String newPath = currentPath.replaceAll(".*/([^/?#]+).*", "$1");
-      if (newPath.equals("home")) {currentPageIndex = 0;}
-      if (newPath.equals("dashboard")) {currentPageIndex = 1;}
-      if (newPath.equals("ecom")) {currentPageIndex = 2;}
-      if (newPath.equals("docs")) {currentPageIndex = 3;}
+    String route = currentPath.replaceAll(".*/([^/?#]+).*", "$1");
+      if (route.equals("home")) {currentPageIndex = 0;}
+      if (route.equals("dashboard")) {currentPageIndex = 1;}
+      if (route.equals("ecom")) {currentPageIndex = 2;}
+      if (route.equals("docs")) {currentPageIndex = 3;}
       tabs.select(currentPageIndex);
   }
 
