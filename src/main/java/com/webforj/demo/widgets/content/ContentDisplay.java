@@ -2,7 +2,11 @@ package com.webforj.demo.widgets.content;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
+import com.webforj.App;
+import com.webforj.Request;
 // import com.webforj.addons.services.simplerouter.SimpleRouter;
 // import com.webforj.addons.services.simplerouter.event.SimpleRouteMatchEvent;
 import com.webforj.component.Composite;
@@ -40,10 +44,9 @@ public class ContentDisplay extends Composite<Div> {
   }
 
   private void handleInitialRoute() {
-    String currentRoute = router.getCurrentRoute();
-    if (currentRoute == null || !currentRoute.equals("home/*")) {
-      router.navigate("home");
-    } 
+    String currentPath = App.getUrl(); 
+    String newPath = currentPath.replaceAll(".*/([^/?#]+).*", "$1");
+    router.navigate(newPath);
   }
 
   private void onRouteMatch(SimpleRouteMatchEvent ev) {

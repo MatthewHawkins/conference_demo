@@ -1,5 +1,7 @@
 package com.webforj.demo.widgets.header;
 
+import com.webforj.App;
+import com.webforj.Request;
 import com.webforj.annotation.InlineStyleSheet;
 import com.webforj.component.Composite;
 import com.webforj.component.Expanse;
@@ -36,6 +38,7 @@ public class Header extends Composite<Div> {
 
   private SimpleRouter router = SimpleRouter.getInstance();
   int selectedIndex;
+  int currentPageIndex;
 
   public Header(){
     self.add(logo, tabs, themeToggle);
@@ -53,6 +56,15 @@ public class Header extends Composite<Div> {
     tabs.setBodyHidden(true);
 
     tabs.onSelect(this::navigate);
+
+    String currentPath = App.getUrl(); 
+    // String currentPath = Request.getUrl(); 
+    String newPath = currentPath.replaceAll(".*/([^/?#]+).*", "$1");
+      if (newPath.equals("home")) {currentPageIndex = 0;}
+      if (newPath.equals("dashboard")) {currentPageIndex = 1;}
+      if (newPath.equals("ecom")) {currentPageIndex = 2;}
+      if (newPath.equals("docs")) {currentPageIndex = 3;}
+      tabs.select(currentPageIndex);
   }
 
   private void navigate(TabSelectEvent e){
@@ -60,6 +72,7 @@ public class Header extends Composite<Div> {
       return;
     }
     selectedIndex = e.getTabIndex();
+
     router.navigate(e.getTab().getTitle().replaceAll("<[^>]*>", "").trim().toLowerCase());
   }
 }
