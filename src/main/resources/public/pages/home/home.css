@@ -1,0 +1,123 @@
+[selected-page="home"] {
+    background-color: var(--dwc-surface-3);
+  }
+  
+  .home__header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: var(--dwc-space-m);
+    white-space: normal;
+  }
+  
+  .home__header h1 {
+    font-size: 3rem;
+    font-weight: bold;
+    text-align: center;
+    margin: 0;
+  }
+  
+  .home__header p {
+    margin: 0;
+    font-size: 1.5em;
+    max-width: 60%;
+    text-align: center;
+  }
+  
+  .home__header span {
+    font-weight: 600;
+    font-size: 1.7rem;
+  }
+  
+  .card--video {
+    padding: 0;
+    margin-bottom: 4rem;
+  }
+  
+  .card--video video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .javalandSample {
+    width: 100%;
+    display: grid;
+    /* grid-template-columns: repeat(auto-fill, minmax(400px, 1fr)); */
+    grid-template-columns: 600px 400px;
+    gap: var(--dwc-space-m);
+    justify-content: center;
+    overflow: visible !important;
+    margin: 4rem 0;
+  }
+  
+  .javalandSample h2 {
+    margin-top: 0;
+  }
+  
+  .javalandSample__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: var(--dwc-space-l);
+    /* padding: var(--dwc-space-m); */
+    margin-bottom: 3rem;
+  }
+  
+  .javalandSample__description {
+    white-space: normal;
+  }
+  
+  .javalandSample__result {
+    background: var(--dwc-surface-3);
+    position: relative;
+    width: 300px;
+    height: 568px;
+    margin: 20px auto;
+    border: 1px solid black;
+    box-shadow: 0 0 0 10px black, 0 3px 22px black;
+    outline: thin solid black;
+    border-radius: 32px;
+    overflow: hidden;
+    padding: var(--dwc-space-s) 0;
+    padding-bottom: 0;
+    margin-top: calc(var(--dwc-font-size-2xl) + 0.75em);
+  }
+  
+  .javalandSample__result::before {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 50%;
+    height: 20px;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #000;
+    border-radius: 10px;
+  }
+  
+  .javalandSample__result--center {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: var(--dwc-space-m);
+  }
+  
+  .javalandSample__tabs {
+    --dwc-tabs-list-indicator-height: 0;
+    width: 100%;
+    border: thin solid var(--dwc--default);
+    border-radius: var(--dwc-border-radius);
+  }
+  
+  .javalandSample__tabs::part(body) {
+    padding-top: 0;
+  }
+  
+  .language-java {
+    margin: 0 !important;
+  }

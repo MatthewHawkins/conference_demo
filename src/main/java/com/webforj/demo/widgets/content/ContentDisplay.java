@@ -9,7 +9,7 @@ import com.webforj.component.Composite;
 import com.webforj.component.html.elements.Div;
 import com.webforj.demo.pages.BasePage;
 import com.webforj.demo.pages.sections.dashboard.Dashboard;
-import com.webforj.demo.pages.Home;
+import com.webforj.demo.pages.sections.home.Home;
 import com.webforj.demo.pages.sections.ecom.Ecom;
 import com.webforj.demo.pages.Docs;
 import com.webforj.kitchen.simplerouter.SimpleRouter;
