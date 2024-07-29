@@ -9,7 +9,8 @@ import com.webforj.component.html.elements.Div;
 import com.webforj.component.html.elements.Img;
 import com.webforj.component.tabbedpane.TabbedPane;
 import com.webforj.component.tabbedpane.event.TabSelectEvent;
-import com.webforj.demo.pages.Home;
+// import com.webforj.demo.pages.sections.home.Home;
+// import com.webforj.demo.pages.Home;
 import com.webforj.kitchen.simplerouter.SimpleRouter;
 // import com.webforj.addons.services.simplerouter.SimpleRouter;
 
@@ -46,10 +47,10 @@ public class Header extends Composite<Div> {
 
     logo.addClassName("logo");
     
-    tabs.addTab("<html> <dwc-icon name=home></dwc-icon> Home", new Home());
+    tabs.addTab("<html> <dwc-icon name=home></dwc-icon> Home");
     tabs.addTab("<html> <dwc-icon name=dashboard></dwc-icon> Dashboard");
     tabs.addTab("<html> <dwc-icon name=shopping-cart></dwc-icon> Ecom");
-    tabs.addTab("<html> <dwc-icon name=book></dwc-icon> Docs");
+    tabs.addTab("<html> <dwc-icon name=book></dwc-icon> Documentation");
     tabs.addClassName("tabs");
     tabs.setBorderless(true);
     tabs.setExpanse(Expanse.LARGE);
@@ -70,9 +71,11 @@ public class Header extends Composite<Div> {
       case "ecom":
         currentPageIndex = 2;
         break;
-      case "docs":
+      case "documentation":
         currentPageIndex = 3;
         break;
+      case "docs":
+        currentPageIndex = 3;
     }
     tabs.select(currentPageIndex);
   }
@@ -83,6 +86,8 @@ public class Header extends Composite<Div> {
     }
     selectedIndex = e.getTabIndex();
 
-    router.navigate(e.getTab().getTitle().replaceAll("<[^>]*>", "").trim().toLowerCase());
+    String page = e.getTab().getTitle().replaceAll("<[^>]*>", "").trim().toLowerCase();
+    if (page.equals("documentation")) {page = "docs";}
+    router.navigate(page);
   }
 }
