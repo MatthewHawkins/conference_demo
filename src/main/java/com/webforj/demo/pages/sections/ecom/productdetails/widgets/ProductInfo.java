@@ -5,8 +5,13 @@ import com.webforj.component.html.elements.Paragraph;
 import com.webforj.component.html.elements.Span;
 
 public class ProductInfo extends Div {
+  private Paragraph title;
+  private String baseTitle;
 
   public ProductInfo(Paragraph title, Paragraph rating, Paragraph stockStatus, String originalPrice, String discountedPrice, String description) {
+    this.title = title;
+    this.baseTitle = title.getText();
+    
     title.addClassName("product-info-container__title");
     rating.addClassName("product-info-container__rating");
     stockStatus.addClassName("product-info-container__stock-status");
@@ -26,6 +31,11 @@ public class ProductInfo extends Div {
 
     this.add(title, rating, stockStatus, price, descContainer);
     this.addClassName("product-info-container");
+  }
+
+  public void updateTitleWithColor(String newShirtColor) {
+    String updatedTitle = baseTitle.replaceFirst("\\(.*\\)", "(" + newShirtColor + ")");
+    title.setText(updatedTitle);
   }
     
 }

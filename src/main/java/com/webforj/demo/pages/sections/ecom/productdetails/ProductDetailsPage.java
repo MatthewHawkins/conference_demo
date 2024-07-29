@@ -4,6 +4,7 @@ import com.webforj.component.html.elements.Div;
 import com.webforj.component.html.elements.Paragraph;
 import com.webforj.demo.pages.sections.ecom.productdetails.widgets.ProductDetails;
 import com.webforj.demo.pages.sections.ecom.productdetails.widgets.ProductImage;
+import com.webforj.demo.pages.sections.ecom.productdetails.widgets.ProductInfo;
 
 
 public class ProductDetailsPage extends Div{
@@ -19,8 +20,10 @@ public class ProductDetailsPage extends Div{
       "context://public/img/thumbnail-4.webp",
     };
 
-    ProductImage productImage = new ProductImage(imageUrls);
     ProductDetails productDetails = new ProductDetails();
+    ProductInfo productInfo = productDetails.getProductInfo();
+    
+    ProductImage productImage = new ProductImage(imageUrls, productInfo);
     
     Div imageContainer = new Div();
     imageContainer.addClassName("product-details-container__image-container")
