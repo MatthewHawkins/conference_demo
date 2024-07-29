@@ -31,6 +31,7 @@ public final class ToDoInput extends Div {
       .addClassName("todo__button");
     button.onClick(e -> {
       repository.addItem(input.getText());
+
       input.setText("");
     });
 

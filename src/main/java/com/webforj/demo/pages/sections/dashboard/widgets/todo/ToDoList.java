@@ -35,7 +35,8 @@ public class ToDoList extends Div {
   private void addCheckbox(ToDoItem item) {
     CheckBox checkBox = new CheckBox(item.getText())
       .setChecked(item.isCompleted())
-      .addClassName("todo__item");
+      .addClassName("todo__item")
+      .removeClassName("bbj-whitespace-nowrap");
     checkBox.setUserData("id", item.getId());
     checkBox.onToggle(e -> {
       item.setCompleted(checkBox.isChecked());
