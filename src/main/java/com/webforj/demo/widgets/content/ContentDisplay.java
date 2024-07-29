@@ -47,7 +47,7 @@ public class ContentDisplay extends Composite<Div> {
     String currentPath = App.getUrl(); 
     // String currentPath = Request.getUrl(); 
     String route = currentPath.replaceAll(".*/([^/?#]+).*", "$1");
-    if (route.equals("conference-dashboard")) {router.navigate("home/*");}
+    if (route.equals("conference-dashboard")) {router.navigate("home");}
     router.navigate(route);
   }
 
