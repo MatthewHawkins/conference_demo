@@ -23,7 +23,7 @@ public class Reply extends Composite<Dialog> {
   Div headerDiv = new Div();
   String initialHeader = "<dwc-icon name='send'></dwc-icon> Reply To Message";
   String sentHeader = "Message sent!";
-  Div noSubject = new Div("Subject line cannot be blank");
+  Div noSubject = new Div("Subject cannot be blank");
   Button send = new Button("Send");
   Button cancel = new Button("Cancel");
   
