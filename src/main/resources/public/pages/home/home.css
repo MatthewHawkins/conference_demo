@@ -121,3 +121,13 @@
   .language-java {
     margin: 0 !important;
   }
+
+  .page {
+    display: flex;
+    flex-direction: column;
+    gap: var(--dwc-space-m);
+    margin: 0 auto;
+    height: auto !important;
+    overflow: visible !important;
+    max-width: 1200px;
+  }
