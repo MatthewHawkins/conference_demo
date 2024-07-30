@@ -78,8 +78,6 @@ public class Inbox extends Div {
     Div message = (Div) event.getComponent();
     String title = (String) message.getUserData("title");
     String messageText = (String) message.getUserData("message");
-
-    App.consoleLog("in handle messageClick with reply: " + reply.getComponentId());
     
     if (!this.hasComponent(reply)) {
       add(reply);
