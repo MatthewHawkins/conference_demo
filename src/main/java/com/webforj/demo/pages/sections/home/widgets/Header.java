@@ -26,8 +26,7 @@ public final class Header extends Div {
     // video.setLoop(true);
 
     HTMLVideo video = new HTMLVideo();
-    // video.setSrc("/files/basis/conquer/files/conference_draft_3.mp4");
-    video.setSrc("/files/javaland/intro.mp4");
+    video.setSrc("video/intro.mp4");
     video.setAutoplay(true);
     video.setLoop(true);
     video.setMuted(true);
