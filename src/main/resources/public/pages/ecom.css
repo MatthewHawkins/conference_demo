@@ -108,6 +108,16 @@
   }
   
   /* Product Details Page Styles */
+  .page {
+    display: flex;
+    flex-direction: column;
+    gap: var(--dwc-space-m);
+    margin: 0 auto;
+    height: auto !important;
+    overflow: visible !important;
+    max-width: 1200px;
+  }
+
   .product-details-container {
     display: flex;
     flex-direction: row;
