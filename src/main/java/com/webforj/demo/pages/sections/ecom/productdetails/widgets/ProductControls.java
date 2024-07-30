@@ -2,6 +2,7 @@ package com.webforj.demo.pages.sections.ecom.productdetails.widgets;
 
 import java.util.ArrayList;
 
+import com.webforj.App;
 import com.webforj.component.button.Button;
 import com.webforj.component.html.elements.Div;
 import com.webforj.component.list.ChoiceBox;
@@ -39,17 +40,16 @@ public class ProductControls extends Div {
     Div menuButtons = new Div();
     Div optionButtons = new Div();
 
-    String heartIconHtml = "<html><dwc-icon name='heart' expanse='s'></dwc-icon></html>";
-    String heartFilledIconHtml = "<html><dwc-icon name='heart-filled' expanse='s'></dwc-icon></html>";
-    Button likeButton = new Button(heartIconHtml)
+    String heartIconHtml = "<dwc-icon name='heart' expanse='s'></dwc-icon>";
+    String heartFilledIconHtml = "<dwc-icon name='heart-filled' expanse='s'></dwc-icon>";
+    Button likeButton = new Button().setHtml(heartIconHtml)
       .addClassName("like-button");
 
     likeButton.addClickListener(e -> {
-      String currentButtonText = likeButton.getText();
-      String newButtonText = currentButtonText.equals(heartIconHtml) ? heartFilledIconHtml : heartIconHtml;
-      likeButton.setText(newButtonText);
+      String currentButtonIcon = likeButton.getHtml();
+      String newButtonIcon = currentButtonIcon.equals(heartIconHtml) ? heartFilledIconHtml : heartIconHtml;
+      likeButton.setHtml(newButtonIcon);
     });
-
 
     Button cartButton = new Button("Add To Cart")
       .addClassName("add-to-cart-button");
