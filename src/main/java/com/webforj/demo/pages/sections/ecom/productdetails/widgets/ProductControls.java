@@ -2,7 +2,6 @@ package com.webforj.demo.pages.sections.ecom.productdetails.widgets;
 
 import java.util.ArrayList;
 
-import com.webforj.App;
 import com.webforj.component.button.Button;
 import com.webforj.component.html.elements.Div;
 import com.webforj.component.list.ChoiceBox;

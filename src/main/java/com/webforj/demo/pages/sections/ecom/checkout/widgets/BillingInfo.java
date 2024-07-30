@@ -4,12 +4,12 @@ import com.webforj.App;
 import com.webforj.component.button.Button;
 import com.webforj.component.button.ButtonTheme;
 import com.webforj.component.event.ToggleEvent;
+import com.webforj.component.field.MaskedNumberField;
 import com.webforj.component.field.TextField;
 import com.webforj.component.html.elements.Div;
 import com.webforj.component.html.elements.Paragraph;
 import com.webforj.component.layout.flexlayout.FlexLayout;
 import com.webforj.component.list.ChoiceBox;
-import com.webforj.component.maskednumberfield.MaskedNumberField;
 import com.webforj.component.optioninput.CheckBox;
 
 public class BillingInfo extends Div {
@@ -51,7 +51,7 @@ public class BillingInfo extends Div {
   private void createBillingForm() {
     this.setStyle("display", "flex");
     this.setStyle("flex-direction", "column");
-    zip.setAttribute("label", "Zip Code")
+    zip.setLabel("Zip Code")
       .addClassName("customer-info__zip-code");
 
     diffAddress.setText("Ship to different address");
@@ -154,7 +154,7 @@ public class BillingInfo extends Div {
   private void createMailingForm(ToggleEvent e) {
     if (e.isToggled()) {
       if (mailingStates.isEmpty() || mailingCountries.isEmpty()) {
-        mailingZip.setAttribute("label", "Zip Code")
+        mailingZip.setLabel("Zip Code")
           .addClassName("customer-info__zip-code");
 
         populateStates();

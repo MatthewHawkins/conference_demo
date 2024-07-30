@@ -3,9 +3,9 @@ package com.webforj.demo.pages.sections.dashboard.widgets.inbox;
 import com.webforj.component.Composite;
 import com.webforj.component.button.Button;
 import com.webforj.component.dialog.Dialog;
+import com.webforj.component.field.TextArea;
 import com.webforj.component.field.TextField;
 import com.webforj.component.html.elements.Div;
-import com.webforj.component.textarea.TextArea;
 import com.webforj.component.button.event.ButtonClickEvent;
 
 import static com.webforj.component.button.ButtonTheme.PRIMARY;
@@ -42,7 +42,7 @@ public class Reply extends Composite<Dialog> {
       .setPlaceholder("Subject");
     
     text.addClassName("dialog__message")
-      .setAttribute("label", "Message:");
+      .setLabel("Message:");
     
     Div dialogContent = new Div();
     dialogContent.addClassName("dialog__content")
