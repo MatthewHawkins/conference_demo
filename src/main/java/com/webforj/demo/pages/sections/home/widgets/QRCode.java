@@ -12,7 +12,7 @@ import java.awt.Color;
  * QRCode Generator using Shoelace QRCode component
  */
 @JavaScript(
-  value = "https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.0.0-beta.87/dist/shoelace.js",
+  value = "https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.16.0/cdn/shoelace-autoloader.js",
   attributes = {@Attribute(name = "type", value = "module")})
 @NodeName("sl-qr-code")
 
