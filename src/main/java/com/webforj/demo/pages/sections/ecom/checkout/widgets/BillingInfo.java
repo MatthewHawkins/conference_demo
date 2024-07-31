@@ -80,7 +80,7 @@ public class BillingInfo extends Div {
     submit.setText("""
       <html>
         <div style='text-align: center;'>
-          <dwc-icon name='truck-delivery'></dwc-icon>
+          <dwc-icon name='credit-card-pay'></dwc-icon>
             Proceed to Payment
         </div>
       </html>
