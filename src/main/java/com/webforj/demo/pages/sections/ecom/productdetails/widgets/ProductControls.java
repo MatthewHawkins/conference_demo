@@ -4,13 +4,24 @@ import java.util.ArrayList;
 
 import com.webforj.component.button.Button;
 import com.webforj.component.html.elements.Div;
+import com.webforj.component.html.elements.H1;
+import com.webforj.component.html.elements.Span;
 import com.webforj.component.list.ChoiceBox;
 import com.webforj.component.list.ListItem;
+import com.webforj.demo.pages.sections.ecom.checkout.widgets.Rating;
 
 public class ProductControls extends Div {
     
   public ProductControls() {
     ChoiceBox sizeDrop = new ChoiceBox();
+    Rating rating = new Rating();
+    Div ratingDiv = new Div();
+
+    Span header = new Span("Rate this product");
+    ratingDiv.add(header, rating);
+    ratingDiv.addClassName("sl-component__rating");
+
+    
 
     ArrayList<ListItem> sizeCategories = new ArrayList<>();
     sizeCategories.add(new ListItem("XS"));
@@ -37,28 +48,17 @@ public class ProductControls extends Div {
       .selectIndex(0);
 
     Div menuButtons = new Div();
-    Div optionButtons = new Div();
-
-    String heartIconHtml = "<dwc-icon name='heart' expanse='s'></dwc-icon>";
-    String heartFilledIconHtml = "<dwc-icon name='heart-filled' expanse='s'></dwc-icon>";
-    Button likeButton = new Button().setHtml(heartIconHtml)
-      .addClassName("like-button");
-
-    likeButton.addClickListener(e -> {
-      String currentButtonIcon = likeButton.getHtml();
-      String newButtonIcon = currentButtonIcon.equals(heartIconHtml) ? heartFilledIconHtml : heartIconHtml;
-      likeButton.setHtml(newButtonIcon);
-    });
+    Div ratingButtons = new Div();
 
     Button cartButton = new Button("Add To Cart")
       .addClassName("add-to-cart-button");
 
-    menuButtons.add(sizeDrop, quantityDrop);
-    optionButtons.add(likeButton, cartButton);
+    menuButtons.add(sizeDrop, quantityDrop, cartButton);
+    ratingButtons.add(ratingDiv);
     menuButtons.addClassName("controls-container__buttons-container");
-    optionButtons.addClassName("controls-container__buttons-container");
+    ratingButtons.addClassName("controls-container__rating-buttons-container");
 
-    this.add(menuButtons, optionButtons);
+    this.add(menuButtons, ratingButtons);
     this.addClassName("controls-container");
   }
 }

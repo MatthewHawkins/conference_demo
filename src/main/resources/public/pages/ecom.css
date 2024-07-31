@@ -155,6 +155,7 @@
   
   .product-details {
     padding-left: 20px;
+    overflow: auto;
   }
   
   .product-info-container {
@@ -167,12 +168,17 @@
     font-weight: bold;
     font-size: 2rem;
     margin-bottom: 15px;
+    margin-top: 1em;
   }
   
   .product-info-container__price {
     display: flex;
     align-items: baseline;
     font-weight: bold;
+  }
+
+  .product-info-container__rating {
+    margin-top: -2.5em;
   }
   
   .product-info-container__original-price {
@@ -213,7 +219,16 @@
   
   .controls-container__buttons-container {
     display: flex;
+    flex-wrap: wrap;
     gap: 30px;
+    align-items: end;
+  }
+
+  .controls-container__rating-buttons-container {
+    display: flex;
+    gap: 30px;
+    align-items: center;  
+    margin-top: 2em;
   }
   
   .buttons-container {
@@ -222,6 +237,10 @@
     width: 200px;
   }
   
+  .like-button {
+    float: right;
+  }
+
   .like-button::part(control) {
     background-color: transparent;
     --dwc-button-border-color: transparent;
@@ -261,6 +280,7 @@
     height: auto;
     cursor: pointer;
   }
+
   @keyframes grow {
     0% {
       transform: scale(1);
@@ -408,4 +428,17 @@
   }
   .button__submit::before {
     border-color: transparent;
+  }
+
+  .sl-component__rating sl-rating {
+    --symbol-size: 2em;
+  }
+
+  .sl-component__rating {
+    display: flex;
+    flex-direction: column;
+    /* margin: 0 auto; */
+    text-align: center;
+    font-size: 0.85em;
+    font-weight: 500;
   }
