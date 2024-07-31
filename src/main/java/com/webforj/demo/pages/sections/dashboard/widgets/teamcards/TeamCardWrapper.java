@@ -38,6 +38,7 @@ public class TeamCardWrapper extends Div implements CardClickListener {
 
     dialog.addClassName("contact--info")
       .add(img, exit, name, position);
+      dialog.setBlurred(true);
 
     add(dialog);
     dialog.open();

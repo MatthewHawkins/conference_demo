@@ -10,9 +10,9 @@ public class TeamCard extends Composite<Div> {
   Img avatar = new Img();
   Strong username = new Strong();
   Paragraph position = new Paragraph();
-
+  
   private CardClickListener clickListener;
-
+  
   public TeamCard() {
     avatar.addClassName("team--avatar");
     username.addClassName("team--username");
