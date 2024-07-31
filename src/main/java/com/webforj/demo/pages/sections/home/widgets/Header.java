@@ -21,12 +21,8 @@ public final class Header extends Div {
     Div card = new Div();
     card.addClassName("card card--video");
 
-    // Youtube video = new Youtube("z735T2XOLSw");
-    // video.setAutoPlay(true);
-    // video.setLoop(true);
-
     HTMLVideo video = new HTMLVideo();
-    video.setSrc("video/intro.mp4");
+    video.setSrc("/files/webforJ-demo/intro.mp4");
     video.setAutoplay(true);
     video.setLoop(true);
     video.setMuted(true);
