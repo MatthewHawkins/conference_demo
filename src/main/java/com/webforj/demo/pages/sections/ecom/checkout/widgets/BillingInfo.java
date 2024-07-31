@@ -61,7 +61,7 @@ public class BillingInfo extends Div {
       <html>
         <div style='text-align: center;'>
           <dwc-icon name='arrow-left'></dwc-icon>
-          Back to Shopping Cart
+          Continue Shopping
         </div>
       </html>
     """)
@@ -81,7 +81,7 @@ public class BillingInfo extends Div {
       <html>
         <div style='text-align: center;'>
           <dwc-icon name='truck-delivery'></dwc-icon>
-            Proceed to Shipping
+            Proceed to Payment
         </div>
       </html>
     """)

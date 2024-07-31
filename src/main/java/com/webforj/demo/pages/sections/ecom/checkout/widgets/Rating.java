@@ -10,9 +10,12 @@ import com.webforj.component.element.annotation.NodeName;
 
   @JavaScript(
     value = "https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.0.0-beta.87/dist/shoelace.js",
-    attributes = {@Attribute(name = "type", value = "module")
+    attributes = {
+      @Attribute(name = "type", value = "module"),
+      @Attribute(name = "precision", value = ".5")
     }
   )
+
   @NodeName("sl-rating")
 
   public final class Rating extends ElementComposite {    
