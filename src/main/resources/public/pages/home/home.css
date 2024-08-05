@@ -132,3 +132,7 @@
     overflow: visible !important;
     max-width: 1200px;
   }
+
+  .logo:hover {
+    cursor: pointer;
+  }

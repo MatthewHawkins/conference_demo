@@ -58,8 +58,12 @@ public class Header extends Composite<Div> {
 
     tabs.onSelect(this::navigate);
 
-    String currentPath = App.getUrl(); 
-    // String currentPath = Request.getUrl(); 
+    logo.addClickListener(e -> {
+      tabs.select(0);
+      router.navigate("home");
+    });
+
+    String currentPath = Request.getCurrent().getUrl();
     String route = currentPath.replaceAll(".*/([^/?#]+).*", "$1");
     switch (route) {
       case "home":
