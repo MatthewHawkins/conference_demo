@@ -22,7 +22,7 @@ public class TeamCardDisplay extends Composite<Div> {
       "Premium User"
     };
 
-    teamCardWrapper.addClassName("teamcard--wrapper");
+    teamCardWrapper.addClassName("teamcard__wrapper");
     getBoundComponent().add(teamCardWrapper);
 
     for (int i = 0; i < names.length; i++) {

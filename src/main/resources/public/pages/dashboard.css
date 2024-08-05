@@ -1,6 +1,6 @@
 /* Counter Widgets
 ================ */
-.countersWrapper {
+.dashboard__counters-wrapper {
     width: 100%;
     display: flex;
     /* flex-wrap: wrap; */
@@ -11,7 +11,7 @@
   }
   
   /** [animated-counter] is the container of the animated-counter component */
-  .countersWrapper [animated-counter] {
+  .dashboard__counters-wrapper [animated-counter] {
     flex: 1 1 24%;
   }
   
@@ -21,7 +21,7 @@
     width: 100%;
   }
   
-  .chartsWrapper {
+  .dashboard__charts-wrapper {
     width: 100%;
     display: flex;
     /* flex-wrap: wrap; */
@@ -55,7 +55,7 @@
   
   /* Apps Widgets
   ================ */
-  .appsWrapper {
+  .apps-wrapper {
     display: grid;
     /* grid-template-columns: repeat(auto-fill, minmax(400px, 1fr)); */
     grid-template-columns: 1fr 1fr;
@@ -65,7 +65,7 @@
   
   /* Todo Widget
   ================ */
-  .card--todo {
+  .card__todo {
     max-height: 450px;
     margin-bottom: 35px;
   }
@@ -83,7 +83,7 @@
     flex: 1;
   }
   
-  .todo__inputWrapper {
+  .todo__input-wrapper {
     display: flex;
     align-items: center;
     gap: var(--dwc-space-s);
@@ -223,14 +223,14 @@
   /* TeamCard Widget
   ================ */
   
-  .teamcard--wrapper {
+  .teamcard__wrapper {
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
     gap: var(--dwc-space-m);
   }
   
-  .team--card {
+  .team__card {
     background-color: var(--dwc-surface-3);
     border-radius: var(--dwc-border-radius-m);
     padding: var(--dwc-space-2xl) var(--dwc-space-xl);
@@ -242,26 +242,26 @@
     transition: background-color 0.25s ease;
   }
   
-  .team--card.is-active {
+  .team__card.is-active {
     background-color: #7db1ff;
   }
   
-  .team--card:hover {
+  .team__card:hover {
     background-color: #abccfd;
     cursor: pointer;
   }
   
-  .team--avatar {
+  .team__avatar {
     width: var(--dwc-size-2xl);
     border-radius: var(--dwc-border-radius-round);
   }
   
-  .team--username {
+  .team__username {
     color: var(--dwc-color-black);
     font-size: var(--dwc-font-size-l);
   }
   
-  .team--position {
+  .team__position {
     color: var(--dwc-color-gray-50);
   }
 

@@ -8,7 +8,7 @@ public class ToDo extends Div {
 
   public ToDo() {
     Div card = new Div();
-    card.addClassName("card card--todo");
+    card.addClassName("card card__todo");
 
     Paragraph header = new Paragraph("To Do")
       .addClassName("card__header");

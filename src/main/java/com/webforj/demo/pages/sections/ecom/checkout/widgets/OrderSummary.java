@@ -24,37 +24,37 @@ public class OrderSummary extends Div {
   private Span totalValue = new Span("$284");
 
   public OrderSummary() {
-    title.addClassName("title-order-summary");
+    title.addClassName("order-summary__title");
 
-    Div item1 = new Div().addClassName("order-item");
+    Div item1 = new Div().addClassName("order-summary__order-item");
     image1.addClassName("order-item__image");
     name1.addClassName("order-item__name");
     quantityAndPrice1.addClassName("order-item__quantity-price");
     item1.add(image1, name1, quantityAndPrice1);
 
-    Div item2 = new Div().addClassName("order-item");
+    Div item2 = new Div().addClassName("order-summary__order-item");
     image2.addClassName("order-item__image");
     name2.addClassName("order-item__name");
     quantityAndPrice2.addClassName("order-item__quantity-price");
     item2.add(image2, name2, quantityAndPrice2);
 
-    Div item3 = new Div().addClassName("order-item");
+    Div item3 = new Div().addClassName("order-summary__order-item");
     image3.addClassName("order-item__image");
     name3.addClassName("order-item__name");
     quantityAndPrice3.addClassName("order-item__quantity-price");
     item3.add(image3, name3, quantityAndPrice3);
 
-    Div subtotalLine = new Div().addClassName("total-line-item");
+    Div subtotalLine = new Div().addClassName("order-summary__total-line-item");
     subtotalLabel.addClassName("total-line-item__label");
     subtotalValue.addClassName("total-line-item__value");
     subtotalLine.add(subtotalLabel, subtotalValue);
 
-    Div shippingLine = new Div().addClassName("total-line-item");
+    Div shippingLine = new Div().addClassName("order-summary__total-line-item");
     shippingLabel.addClassName("total-line-item__label");
     shippingValue.addClassName("total-line-item__value");
     shippingLine.add(shippingLabel, shippingValue);
 
-    Div totalLine = new Div().addClassName("total-line-item");
+    Div totalLine = new Div().addClassName("order-summary__total-line-item");
     totalLabel.addClassName("total-line-item__label");
     totalValue.addClassName("total-line-item__value");
     totalLine.add(totalLabel, totalValue);

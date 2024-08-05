@@ -14,7 +14,7 @@ import com.webforj.demo.pages.sections.home.widgets.QRCodeSample;
 public final class Home extends BasePage<Home> {
 
   public Home() {
-    self.addClassName("page page--home");
+    self.addClassName("page page__home");
 
     self.add(new Header());
     self.add(new CounterSample());

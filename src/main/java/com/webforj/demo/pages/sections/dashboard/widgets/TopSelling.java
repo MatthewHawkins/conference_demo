@@ -11,7 +11,7 @@ public final class TopSelling extends Div {
 
   public TopSelling() {
     Div card = new Div()
-      .addClassName("card card--topSelling");
+      .addClassName("card card__top-selling");
 
     Paragraph header = new Paragraph("Top Selling Products")
       .addClassName("card__header")

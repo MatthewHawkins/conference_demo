@@ -30,7 +30,7 @@ public class ProductInfo extends Div {
         .addClassName("product-info-container__description");
 
     this.add(title, rating, stockStatus, price, descContainer);
-    this.addClassName("product-info-container");
+    this.addClassName("product-info__container");
   }
 
   public void updateTitleWithColor(String newShirtColor) {

@@ -14,11 +14,11 @@ public class TeamCard extends Composite<Div> {
   private CardClickListener clickListener;
   
   public TeamCard() {
-    avatar.addClassName("team--avatar");
-    username.addClassName("team--username");
-    position.addClassName("team--position");
+    avatar.addClassName("team__avatar");
+    username.addClassName("team__username");
+    position.addClassName("team__position");
 
-    getBoundComponent().addClassName("team--card");
+    getBoundComponent().addClassName("team__card");
     getBoundComponent().add(avatar);
 
     Div textWrapper = new Div();

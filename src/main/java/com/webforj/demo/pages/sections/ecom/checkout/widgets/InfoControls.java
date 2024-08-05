@@ -23,7 +23,7 @@ public class InfoControls extends Composite<Div> {
       </html>
     """)
       .setTheme(ButtonTheme.INFO)
-      .addClassName("button-checkout");
+      .addClassName("button__checkout");
 
     shippingBtn.setText("""
       <html>
@@ -35,7 +35,7 @@ public class InfoControls extends Composite<Div> {
         </div>
       </html>
     """)
-      .addClassName("button-checkout");
+      .addClassName("button__checkout");
 
     paymentBtn.setText("""
       <html>
@@ -47,9 +47,9 @@ public class InfoControls extends Composite<Div> {
         </div>
       </html>        
     """)
-      .addClassName("button-checkout");
+      .addClassName("button__checkout");
   
-    getBoundComponent().addClassName("container-info-controls")
+    getBoundComponent().addClassName("shopping-cart__info-controls")
       .add(billingBtn, shippingBtn, paymentBtn);
   }
     

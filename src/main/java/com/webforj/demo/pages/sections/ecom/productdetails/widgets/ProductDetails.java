@@ -12,7 +12,7 @@ public class ProductDetails extends Composite<Div> {
     String heartIconHtml = "<dwc-icon name='heart' expanse='s'></dwc-icon>";
     String heartFilledIconHtml = "<dwc-icon name='heart-filled' expanse='s'></dwc-icon>";
     Button likeButton = new Button().setHtml(heartIconHtml)
-      .addClassName("like-button");
+      .addClassName("button__like");
 
     likeButton.addClickListener(e -> {
       String currentButtonIcon = likeButton.getHtml();
@@ -31,7 +31,7 @@ public class ProductDetails extends Composite<Div> {
 
     ProductControls productControls = new ProductControls();
 
-    getBoundComponent().addClassName("product-details")
+    getBoundComponent().addClassName("product-details__container")
       .add(likeButton, productInfo, productControls);
     }
 

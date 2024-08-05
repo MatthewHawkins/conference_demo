@@ -15,11 +15,11 @@ public class CheckoutPage extends Div {
     InfoControls infoControls = new InfoControls();
     OrderSummary orderSummary = new OrderSummary();
     Div leftSection = new Div(infoControls, orderSummary);
-    leftSection.addClassName("left-checkout-container");
+    leftSection.addClassName("checkout__left-container");
 
     BillingInfo billingInfo = new BillingInfo();
     Div rightSection = new Div(billingInfo);
-    rightSection.addClassName("right-checkout-container");
+    rightSection.addClassName("checkout__right-container");
 
     Div checkoutContainer = new Div(leftSection, rightSection);
     checkoutContainer.addClassName("checkout-container");

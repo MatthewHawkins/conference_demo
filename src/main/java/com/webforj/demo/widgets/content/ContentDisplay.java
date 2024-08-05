@@ -6,7 +6,7 @@ import java.util.Map;
 
 
 import com.webforj.App;
-
+import com.webforj.Request;
 import com.webforj.component.Composite;
 import com.webforj.component.html.elements.Div;
 import com.webforj.demo.pages.BasePage;
@@ -42,8 +42,8 @@ public class ContentDisplay extends Composite<Div> {
   }
 
   private void handleInitialRoute() {
-    String currentPath = App.getUrl(); 
-    // String currentPath = Request.getUrl(); 
+    // String currentPath = App.getUrl(); 
+    String currentPath = Request.getCurrent().getUrl(); 
     String route = currentPath.replaceAll(".*/([^/?#]+).*", "$1");
     if (route.equals("conference-dashboard")) {router.navigate("home");}
     router.navigate(route);

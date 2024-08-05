@@ -68,15 +68,6 @@ public class BillingInfo extends Div {
       .setTheme(ButtonTheme.GRAY)
       .addClassName("button__cancel");  
 
-    // back.setHtml("""
-    //     <div style='text-align: center;'>
-    //       <dwc-icon name='arrow-left'></dwc-icon>
-    //       Back to Shopping Cart
-    //     </div>
-    // """)
-      // .setTheme(ButtonTheme.GRAY)
-      // .addClassName("button-cancel");
-
     submit.setText("""
       <html>
         <div style='text-align: center;'>
@@ -87,15 +78,6 @@ public class BillingInfo extends Div {
     """)
       .setTheme(ButtonTheme.SUCCESS)
       .addClassName("button__submit");
-
-    // submit.setHtml("""
-    //   <div style='text-align: center;'>
-    //     <dwc-icon name='truck-delivery'></dwc-icon>
-    //       Proceed to Shipping
-    //   </div>
-    // """)
-    //   .setTheme(ButtonTheme.SUCCESS)
-    //   .addClassName("button-submit");
 
     FlexLayout rowOne = FlexLayout.create(title, subtitle)
       .vertical()

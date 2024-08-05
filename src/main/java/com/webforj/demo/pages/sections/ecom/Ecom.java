@@ -15,18 +15,15 @@ public class Ecom extends BasePage<Ecom> {
   private CheckoutPage checkoutPage = new CheckoutPage();
 
   public Ecom(){
-    self.addClassName("page page--ecom");
+    self.addClassName("page page__ecom");
 
     Div productsPageWrapper = new Div();
-    productsPageWrapper.addClassName("tab-page-container");
     productsPageWrapper.add(productsPage);
 
     Div detailsPageWrapper = new Div();
-    detailsPageWrapper.addClassName("tab-page-container");
     detailsPageWrapper.add(productDetailsPage);
 
     Div checkoutPageWrapper = new Div();
-    checkoutPageWrapper.addClassName("tab-page-container");
     checkoutPageWrapper.add(checkoutPage);
 
     self.add(productsPageWrapper, detailsPageWrapper, checkoutPageWrapper); 

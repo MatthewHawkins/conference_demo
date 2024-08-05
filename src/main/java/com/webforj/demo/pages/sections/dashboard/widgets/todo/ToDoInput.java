@@ -20,7 +20,7 @@ public final class ToDoInput extends Div {
   public ToDoInput(ToDoRepository repository) {
     this.repository = repository;
     Div wrapper = new Div()
-      .addClassName("todo__inputWrapper");
+      .addClassName("todo__input-wrapper");
 
     TextField input = new TextField()
       .addClassName("todo__input")

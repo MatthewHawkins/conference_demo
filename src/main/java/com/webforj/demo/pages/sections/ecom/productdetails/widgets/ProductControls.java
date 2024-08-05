@@ -18,6 +18,7 @@ public class ProductControls extends Div {
     Div ratingDiv = new Div();
 
     Span header = new Span("Rate this product");
+    rating.setValue(.5);
     ratingDiv.add(header, rating);
     ratingDiv.addClassName("sl-component__rating");
 
@@ -51,7 +52,7 @@ public class ProductControls extends Div {
     Div ratingButtons = new Div();
 
     Button cartButton = new Button("Add To Cart")
-      .addClassName("add-to-cart-button");
+      .addClassName("button__add-to-cart");
 
     menuButtons.add(sizeDrop, quantityDrop, cartButton);
     ratingButtons.add(ratingDiv);

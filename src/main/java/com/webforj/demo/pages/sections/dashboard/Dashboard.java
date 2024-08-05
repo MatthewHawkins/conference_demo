@@ -21,21 +21,21 @@ public class Dashboard extends BasePage<Dashboard> {
   
   public Dashboard() {
     setVisible(false);
-    self.addClassName("page page--dashboard");
+    self.addClassName("page page__dashboard");
 
     Div counters = new Div();
-    counters.addClassName("countersWrapper");
+    counters.addClassName("dashboard__counters-wrapper");
     counters.add(new TotalRevenue());
     counters.add(new Target());
     counters.add(new TodaySales());
 
     Div quarterCharts = new Div();
-    quarterCharts.addClassName("chartsWrapper");
+    quarterCharts.addClassName("dashboard__charts-wrapper");
     quarterCharts.add(new RevenueLocation());
     quarterCharts.add(new LifetimeSales());
 
     Div lifeTimeCharts = new Div();
-    lifeTimeCharts.addClassName("chartsWrapper");
+    lifeTimeCharts.addClassName("dashboard__charts-wrapper");
     lifeTimeCharts.add(new LastSales());
     lifeTimeCharts.add(new ProjectionsVsActual());
 
@@ -43,7 +43,7 @@ public class Dashboard extends BasePage<Dashboard> {
     teamCards.add(new TeamCardDisplay());
 
     Div apps = new Div();
-    apps.addClassName("appsWrapper");
+    apps.addClassName("apps-wrapper");
     apps.add(new ToDo());
     apps.add(new Inbox());
 

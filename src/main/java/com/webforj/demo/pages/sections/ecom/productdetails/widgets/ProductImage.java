@@ -16,9 +16,9 @@ public class ProductImage extends Composite<Div> {
     this.productInfo = productInfo;
 
     mainImage = new Img(imageUrls[0]);
-    mainImage.addClassName("main-image");
+    mainImage.addClassName("product-image__main-image");
 
-    thumbnailContainer.addClassName("thumbnail-container");
+    thumbnailContainer.addClassName("product-image__thumbnail-container");
 
     for (int i = 0; i < imageUrls.length; i++) {
       final int index = i;
@@ -28,7 +28,7 @@ public class ProductImage extends Composite<Div> {
       thumbnailContainer.add(thumbnail);
     }
 
-    getBoundComponent().addClassName("product-image")
+    getBoundComponent().addClassName("product-image__container")
       .add(mainImage, thumbnailContainer);
   }
 

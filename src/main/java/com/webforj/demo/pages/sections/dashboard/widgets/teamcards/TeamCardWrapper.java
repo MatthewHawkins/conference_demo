@@ -21,7 +21,7 @@ public class TeamCardWrapper extends Div implements CardClickListener {
   public void openContactInfo(TeamCard card) {
     Dialog dialog = new Dialog();
     Img img = new Img(card.getAvatar().getSrc(), "Avatar");
-    img.addClassName("team--avatar");
+    img.addClassName("team__avatar");
 
     Span exit = new Span()
       .addClassName("button__team-card-close")
@@ -29,10 +29,10 @@ public class TeamCardWrapper extends Div implements CardClickListener {
     exit.onClick(event -> {dialog.close();});
 
     Strong name = new Strong();
-    name.addClassName("team--username")
+    name.addClassName("team__username")
       .setText(card.getUserName().getText());
     Paragraph position = new Paragraph();
-    position.addClassName("team--position")
+    position.addClassName("team__position")
       .setText(card.getPosition().getText());
 
 
