@@ -26,6 +26,8 @@ public class Reply extends Composite<Dialog> {
   Div noSubject = new Div("Subject cannot be blank");
   Button send = new Button("Send");
   Button cancel = new Button("Cancel");
+  Timer noSubjectTimer = new Timer();
+  Boolean timerSet = false;
   
   public Reply() {
     headerDiv.setHtml(initialHeader);
@@ -83,18 +85,28 @@ public class Reply extends Composite<Dialog> {
       } else {
         noSubject.setStyle("display", "block");
         self.addClassName("reply-form-container__no-subject");
-        new Timer().schedule(
+        timerSet = true;
+        
+        noSubjectTimer.schedule(
           new TimerTask() {
             @Override
             public void run() {
               noSubject.setStyle("display", "none");
               self.removeClassName("reply-form-container__no-subject");
+              timerSet = false;
             }
           }, 2000
         );
+
       }
     } else {
-      self.close();
+      self.removeClassName("reply-form-container__no-subject")
+        .close();
+      timerSet = false;
+      noSubject.setStyle("display", "none");
+      if (timerSet) {
+        noSubjectTimer.cancel();
+      }
       headerDiv.setHtml(initialHeader)
         .removeClassName("message-sent");
       to.setVisible(true);
