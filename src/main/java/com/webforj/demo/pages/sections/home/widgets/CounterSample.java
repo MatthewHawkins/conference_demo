@@ -16,19 +16,19 @@ public class CounterSample extends Composite<FlexLayout> {
     getBoundComponent().setJustifyContent(FlexJustifyContent.CENTER);
     Div sample = new Div();
     getBoundComponent().add(sample);
-    sample.addClassName("javalandSample");
+    sample.addClassName("javaland-sample");
 
     // 1 Content
     // =================
     Div content = new Div();
     sample.add(content);
-    content.addClassName("javalandSample__content");
+    content.addClassName("javaland-sample__content");
 
     // 1.1 Description
     // =================
     Div description = new Div();
     content.add(description);
-    description.addClassName("javalandSample__description");
+    description.addClassName("javaland-sample__description");
     description.setHtml(/* html */"""
       <html>
         <h2>Easy to Start.</h2>
@@ -43,7 +43,7 @@ public class CounterSample extends Composite<FlexLayout> {
     // =================
     TabbedPane tabs = new TabbedPane();
     content.add(tabs);
-    tabs.addClassName("javalandSample__tabs");
+    tabs.addClassName("javaland-sample__tabs");
 
     CodeDisplay application = new CodeDisplay();
     tabs.addTab("App.java", application);
@@ -59,7 +59,7 @@ public class CounterSample extends Composite<FlexLayout> {
     // =================
     Div result = new Div();
     sample.add(result);
-    result.addClassName("javalandSample__result javalandSample__result--center");
+    result.addClassName("javaland-sample__result javaland-sample__result-center");
 
     Div title = new Div();
     title.setHtml(/* html */"""

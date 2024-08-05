@@ -30,19 +30,19 @@
     font-size: 1.7rem;
   }
   
-  .card--video {
+  .card__video {
     padding: 0;
     margin-bottom: 4rem;
     margin-top: 1rem;
   }
   
-  .card--video video {
+  .card__video video {
     width: 100%;
     height: 100%;
     object-fit: cover;
   }
   
-  .javalandSample {
+  .javaland-sample {
     width: 100%;
     display: grid;
     /* grid-template-columns: repeat(auto-fill, minmax(400px, 1fr)); */
@@ -57,7 +57,7 @@
     margin-top: 0;
   }
   
-  .javalandSample__content {
+  .javaland-sample__content {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -67,11 +67,11 @@
     margin-bottom: 3rem;
   }
   
-  .javalandSample__description {
+  .javaland-sample__description {
     white-space: normal;
   }
   
-  .javalandSample__result {
+  .javaland-sample__result {
     background: var(--dwc-surface-3);
     position: relative;
     width: 300px;
@@ -87,7 +87,7 @@
     margin-top: calc(var(--dwc-font-size-2xl) + 0.75em);
   }
   
-  .javalandSample__result::before {
+  .javaland-sample__result::before {
     content: "";
     display: block;
     position: absolute;
@@ -100,7 +100,7 @@
     border-radius: 10px;
   }
   
-  .javalandSample__result--center {
+  .javaland-sample__result-center {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -108,14 +108,14 @@
     gap: var(--dwc-space-m);
   }
   
-  .javalandSample__tabs {
+  .javaland-sample__tabs {
     --dwc-tabs-list-indicator-height: 0;
     width: 100%;
     border: thin solid var(--dwc--default);
     border-radius: var(--dwc-border-radius);
   }
   
-  .javalandSample__tabs::part(body) {
+  .javaland-sample__tabs::part(body) {
     padding-top: 0;
   }
   

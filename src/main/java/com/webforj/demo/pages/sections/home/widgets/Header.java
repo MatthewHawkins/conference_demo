@@ -19,7 +19,7 @@ public final class Header extends Div {
     """);
 
     Div card = new Div();
-    card.addClassName("card card--video");
+    card.addClassName("card card__video");
 
     HTMLVideo video = new HTMLVideo();
     video.setSrc("/files/webforJ-demo/intro.mp4");
