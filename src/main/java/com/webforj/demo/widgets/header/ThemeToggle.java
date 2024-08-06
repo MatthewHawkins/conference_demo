@@ -1,9 +1,12 @@
 package com.webforj.demo.widgets.header;
 
 import com.webforj.App;
+import com.webforj.annotation.InlineStyleSheet;
 import com.webforj.component.Composite;
 import com.webforj.component.html.elements.Div;
 import com.webforj.component.html.event.HtmlClickEvent;
+
+@InlineStyleSheet(id = "javaland-page-home", value = "context://public/pages/home/home.css", once = true)
 
 public class ThemeToggle extends Composite<Div>{
   
@@ -15,8 +18,7 @@ public class ThemeToggle extends Composite<Div>{
     } else{
       self.setHtml("<dwc-icon name=moon></dwc-icon>");
     }
-    self.setStyle("height", "var(--dwc-size-l)");
-    self.setStyle("align-content", "center");
+    self.addClassName("button__theme-toggle");
     self.onClick(this::toggleTheme);
   }
   

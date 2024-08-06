@@ -136,3 +136,12 @@
   .logo:hover {
     cursor: pointer;
   }
+
+  .button__theme-toggle {
+    height: var(--dwc-size-l);
+    align-content: center;
+  }
+
+  .button__theme-toggle:hover {
+    cursor: pointer;
+  }
