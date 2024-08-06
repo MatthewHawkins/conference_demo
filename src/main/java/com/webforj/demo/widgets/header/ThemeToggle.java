@@ -16,6 +16,7 @@ public class ThemeToggle extends Composite<Div>{
       self.setHtml("<dwc-icon name=moon></dwc-icon>");
     }
     self.setStyle("height", "var(--dwc-size-l)");
+    self.setStyle("align-content", "center");
     self.onClick(this::toggleTheme);
   }
   
