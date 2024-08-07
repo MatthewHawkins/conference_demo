@@ -5,12 +5,16 @@ import com.webforj.component.button.Button;
 import com.webforj.component.button.ButtonTheme;
 import com.webforj.component.event.ToggleEvent;
 import com.webforj.component.field.MaskedNumberField;
+import com.webforj.component.field.MaskedTextField;
 import com.webforj.component.field.TextField;
 import com.webforj.component.html.elements.Div;
 import com.webforj.component.html.elements.Paragraph;
 import com.webforj.component.layout.flexlayout.FlexLayout;
 import com.webforj.component.list.ChoiceBox;
 import com.webforj.component.optioninput.CheckBox;
+
+import javax.swing.text.*;
+
 
 public class BillingInfo extends Div {
   private Paragraph title = new Paragraph("Billing Information");
@@ -20,14 +24,16 @@ public class BillingInfo extends Div {
   private TextField firstName = new TextField("First Name");
   private TextField lastName = new TextField("Last Name");
   private TextField email = new TextField("Email");
-  private TextField phone = new TextField("Phone");
+  // private TextField phone = new TextField("Phone");
+  private MaskedTextField phone = new MaskedTextField("phone");
   private TextField address = new TextField("Address");
   private TextField city = new TextField("City");
   private ChoiceBox states = new ChoiceBox();
   private ChoiceBox mailingStates = new ChoiceBox();
   private ChoiceBox countries = new ChoiceBox();
   private ChoiceBox mailingCountries = new ChoiceBox();
-  private MaskedNumberField zip = new MaskedNumberField();
+  // private MaskedNumberField zip = new MaskedNumberField("Zip Code");
+  private MaskedTextField zip = new MaskedTextField("Zip Code");
   private CheckBox diffAddress = new CheckBox();
   private Button submit = new Button();
   private Button back = new Button();
@@ -51,8 +57,12 @@ public class BillingInfo extends Div {
   private void createBillingForm() {
     this.setStyle("display", "flex");
     this.setStyle("flex-direction", "column");
-    zip.setLabel("Zip Code")
-      .addClassName("customer-info__zip-code");
+    zip.addClassName("customer-info__zip-code")
+      .setMask("00000");
+
+    phone.setMask("(000) 000-0000")
+      .setValue("(   )    -    ")  
+      .addFocusListener(e -> {phone.setCaretPosition(1);});
 
     diffAddress.setText("Ship to different address");
     diffAddress.addToggleListener(this::createMailingForm);
@@ -293,5 +303,4 @@ public class BillingInfo extends Div {
     stateDrop.add("WI", "Wisconsin");
     stateDrop.add("WY", "Wyoming");
   }
-
 }
