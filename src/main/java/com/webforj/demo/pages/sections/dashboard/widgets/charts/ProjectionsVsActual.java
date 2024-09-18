@@ -50,8 +50,19 @@ public final class ProjectionsVsActual extends Div {
     for (int i = 0; i < 6; i++) {
       JsonArray row = new JsonArray();
       row.add(new DateFormatSymbols().getShortMonths() [i + 6]);
-      row.add(Math.random() * 1000);
-      row.add(Math.random() * 1000);
+      double number = Math.floor(Math.random() * 100000) / 100;
+      String formatted = String.format("%.2f", number);
+      if (formatted.endsWith("0")) {
+        number += 0.01;
+      }
+      row.add(number);
+
+      number = Math.floor(Math.random() * 100000) / 100;
+      formatted = String.format("%.2f", number);
+      if (formatted.endsWith("0")) {
+        number += 0.01;
+      }
+      row.add(Math.floor(Math.random() * 100000)/100);
       data.add(row);
     }
 

@@ -2,6 +2,7 @@ package com.webforj.demo.widgets.header;
 
 import com.webforj.App;
 import com.webforj.Request;
+import com.webforj.addons.services.simplerouter.SimpleRouter;
 import com.webforj.annotation.InlineStyleSheet;
 import com.webforj.component.Composite;
 import com.webforj.component.Expanse;
@@ -9,10 +10,6 @@ import com.webforj.component.html.elements.Div;
 import com.webforj.component.html.elements.Img;
 import com.webforj.component.tabbedpane.TabbedPane;
 import com.webforj.component.tabbedpane.event.TabSelectEvent;
-// import com.webforj.demo.pages.sections.home.Home;
-// import com.webforj.demo.pages.Home;
-import com.webforj.kitchen.simplerouter.SimpleRouter;
-// import com.webforj.addons.services.simplerouter.SimpleRouter;
 
 @InlineStyleSheet( /*css */"""
   :root{

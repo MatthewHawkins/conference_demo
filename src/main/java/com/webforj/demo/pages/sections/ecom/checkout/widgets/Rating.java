@@ -22,18 +22,38 @@ import com.webforj.demo.pages.sections.home.widgets.QRCode;
   public final class Rating extends ElementComposite {    
 
     private final PropertyDescriptor<Double> PRECISION = PropertyDescriptor.property("precision", 1.);
+    private final PropertyDescriptor<Double> VALUE = PropertyDescriptor.property("value", 0.);
+    private final PropertyDescriptor<Boolean> READONLY = PropertyDescriptor.property("readonly", false);
 
     public Rating() {
       super();
     }
 
-    public Rating setValue(Double precision) {
+    public Rating setPrecision(Double precision) {
       set(PRECISION, precision);
       return this;
     }
 
-    public Double getValue() {
+    public Double getPrecision() {
       return get(PRECISION);
+    }
+
+    public Rating setValue(Double value) {
+      set(VALUE, value);
+      return this;
+    }
+
+    public Double getValue() {
+      return get(VALUE);
+    }
+
+    public Rating setReadOnly(Boolean readOnly) {
+      set(READONLY, readOnly);
+      return this;
+    }
+
+    public Double getReadOnly() {
+      return get(VALUE);
     }
 
   }

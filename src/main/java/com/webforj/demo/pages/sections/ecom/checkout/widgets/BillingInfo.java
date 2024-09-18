@@ -230,7 +230,6 @@ public class BillingInfo extends Div {
     countryDrop.add("IN", "India");
     countryDrop.add("AU", "Australia");
     countryDrop.add("NZ", "New Zealand");
-    countryDrop.add("RU", "Russia");
     countryDrop.add("ZA", "South Africa");
     countryDrop.add("EG", "Egypt");
     countryDrop.add("NG", "Nigeria");

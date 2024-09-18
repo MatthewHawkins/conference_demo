@@ -1,11 +1,13 @@
 package com.webforj.demo.pages.sections.dashboard.widgets.charts;
 
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
+import com.webforj.App;
 import com.webforj.component.googlecharts.GoogleChart;
 import com.webforj.component.html.elements.Div;
 import com.webforj.component.html.elements.Paragraph;
@@ -39,13 +41,18 @@ public final class RevenueLocation extends Div {
     cols.add("Revenue");
     data.add(cols);
 
-    String[] countries = new String[] { "Germany", "United States", "Brazil", "Canada", "France", "RU" };
+    String[] countries = new String[] { "Germany", "United States", "Brazil", "Canada", "France", "ZA", "AU", "IN", "EG", "ES", "JP" };
 
     // rows
     for (String country : countries) {
       List<Object> row = new ArrayList<>();
       row.add(country);
-      row.add(Math.random() * 10000);
+      double number = Math.floor(Math.random() * 1000000)/100;
+      String formatted = String.format("%.2f", number);
+      if (formatted.endsWith("0")) {
+          number += 0.01;
+      }
+      row.add(number);
       data.add(row);
     }
 

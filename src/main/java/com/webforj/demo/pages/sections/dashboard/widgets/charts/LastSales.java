@@ -52,8 +52,19 @@ public final class LastSales extends Div {
     for (int i = 0; i < 3; i++) {
       List<Object> row = new ArrayList<>();
       row.add(new DateFormatSymbols().getShortMonths()[i]);
-      row.add(Math.random() * 8000);
-      row.add(Math.random() * 8000);
+      double number = Math.floor(Math.random() * 800000) / 100;
+      String formatted = String.format("%.2f", number);
+      if (formatted.endsWith("0")) {
+        number += 0.01;
+      }
+      row.add(number);
+
+      number = Math.floor(Math.random() * 800000) / 100;
+      formatted = String.format("%.2f", number);
+      if (formatted.endsWith("0")) {
+        number += 0.01;
+      }
+      row.add(number);
       data.add(row);
     }       
 

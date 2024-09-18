@@ -5,8 +5,8 @@ import com.webforj.component.html.elements.Div;
 public final class TotalRevenue extends Div {
     
   public TotalRevenue() {
-    AnimatedCounter counter = new AnimatedCounter("Total Revenue", 5808.947);
-    counter.setPrefix("€")
+    AnimatedCounter counter = new AnimatedCounter("Total Revenue", 95808.947);
+    counter.setPrefix("&euro;")
       .setIcon("currency-euro")
       .setTheme(AnimatedCounter.Theme.PRIMARY);
     add(counter);

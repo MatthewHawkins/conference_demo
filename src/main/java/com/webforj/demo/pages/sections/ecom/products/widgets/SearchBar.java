@@ -22,7 +22,7 @@ public class SearchBar extends Composite<Div> {
 
   public SearchBar() {
     searchInput.setType(Type.SEARCH)
-      .setPlaceholder("search...");
+      .setPlaceholder("Search...");
 
     searchContainer.add(searchInput, searchBtn);
     searchContainer.addClassName("search-bar__search-container");

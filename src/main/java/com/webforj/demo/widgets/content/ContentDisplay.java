@@ -7,6 +7,8 @@ import java.util.Map;
 
 import com.webforj.App;
 import com.webforj.Request;
+import com.webforj.addons.services.simplerouter.SimpleRouter;
+import com.webforj.addons.services.simplerouter.event.SimpleRouteMatchEvent;
 import com.webforj.component.Composite;
 import com.webforj.component.html.elements.Div;
 import com.webforj.demo.pages.BasePage;
@@ -14,8 +16,6 @@ import com.webforj.demo.pages.sections.dashboard.Dashboard;
 import com.webforj.demo.pages.sections.home.Home;
 import com.webforj.demo.pages.sections.ecom.Ecom;
 import com.webforj.demo.pages.Docs;
-import com.webforj.kitchen.simplerouter.SimpleRouter;
-import com.webforj.kitchen.simplerouter.event.SimpleRouteMatchEvent;
 
 public class ContentDisplay extends Composite<Div> {
 

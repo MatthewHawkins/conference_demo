@@ -3,9 +3,9 @@ package com.webforj.demo.pages.sections.dashboard.widgets.table;
 public class ProductRecord {
   private String product;
   private String price;
-  private String quantity;
+  private int quantity;
   private String amount;
-  private String imageURL;;
+  private String imageURL;
 
   // getter for product
   public String getProduct() {
@@ -28,12 +28,12 @@ public class ProductRecord {
   }
 
   // getter for quantity
-  public String getQuantity() {
+  public int getQuantity() {
     return quantity;
   }
 
   // setter for quantity
-  public void setQuantity(String quantity) {
+  public void setQuantity(int quantity) {
     this.quantity = quantity;
   }
 

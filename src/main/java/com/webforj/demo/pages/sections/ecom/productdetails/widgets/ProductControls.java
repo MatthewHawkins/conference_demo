@@ -18,7 +18,7 @@ public class ProductControls extends Div {
     Div ratingDiv = new Div();
 
     Span header = new Span("Rate this product");
-    rating.setValue(.5);
+    rating.setPrecision(.5);
     ratingDiv.add(header, rating);
     ratingDiv.addClassName("sl-component__rating");
 

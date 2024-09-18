@@ -13,20 +13,22 @@ import com.webforj.component.html.elements.Paragraph;
 import com.webforj.utilities.Assets;
 
 public final class LifetimeSales extends Div {
-    
+
   public LifetimeSales() {
     addClassName("chartsWrapper__chart card card--lifetimeSales");
 
     Paragraph header = new Paragraph();
     header.addClassName("card__header")
-      .setText("Lifetime Sales");
+        .setText("Lifetime Sales");
     add(header);
 
     GoogleChart chart = new GoogleChart();
     chart.setType(GoogleChart.Type.AREA)
-      .setStyle("width", "100%");
+        .setStyle("width", "100%");
 
-    Map<String, Object> options = new Gson().fromJson(Assets.contentOf("public/charts.json"), new TypeToken<Map<String, Object>>(){}.getType());
+    Map<String, Object> options = new Gson().fromJson(Assets.contentOf("public/charts.json"),
+        new TypeToken<Map<String, Object>>() {
+        }.getType());
 
     chart.setOptions(options);
 
@@ -48,11 +50,24 @@ public final class LifetimeSales extends Div {
 
     // rows
     for (int i = 0; i < 5; i++) {
-        List<Object> row = new ArrayList<>();
-        row.add(2018 + i);
-        row.add(Math.random() * 8000);
-        row.add(Math.random() * 8000);
-        data.add(row);
+      List<Object> row = new ArrayList<>();
+      row.add(2018 + i);
+
+      double number = Math.floor(Math.random() * 800000) / 100;
+      String formatted = String.format("%.2f", number);
+      if (formatted.endsWith("0")) {
+        number += 0.01;
+      }
+      row.add(number);
+
+      number = Math.floor(Math.random() * 800000) / 100;
+      formatted = String.format("%.2f", number);
+      if (formatted.endsWith("0")) {
+        number += 0.01;
+      }
+      row.add(number);
+
+      data.add(row);
     }
 
     chart.setData(data);

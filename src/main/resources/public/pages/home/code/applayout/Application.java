@@ -7,6 +7,7 @@ public class AppTemplateDemo extends App {
   public void run() throws WebforjException {
     Frame mainFrame = new Frame();
 
+    //...
     layout.addPage("Dashboard", "dashboard", new Div())
     .addPage("Orders", "shopping-cart", new Div())
     .addPage("Customers", "users", new Div())
@@ -14,7 +15,8 @@ public class AppTemplateDemo extends App {
     .addPage("Documents", "files", new Div())
     .addPage("Tasks", "checklist", new Div())
     .addPage("Analytics", "chart-dots-2", new Div());
-
+    //...
+    
     mainFrame.add(layout);
   }
 }

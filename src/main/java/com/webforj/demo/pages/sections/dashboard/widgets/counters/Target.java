@@ -5,8 +5,8 @@ import com.webforj.component.html.elements.Div;
 public final class Target extends Div {
     
   public Target() {
-    AnimatedCounter counter = new AnimatedCounter("Target", 7306.00);
-    counter.setPrefix("€")
+    AnimatedCounter counter = new AnimatedCounter("Target", 117306.00);
+    counter.setPrefix("&euro;")
       .setIcon("target")
       .setTheme(AnimatedCounter.Theme.DANGER);
     add(counter);

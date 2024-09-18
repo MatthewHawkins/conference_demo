@@ -4,6 +4,7 @@ import com.webforj.component.Composite;
 import com.webforj.component.button.Button;
 import com.webforj.component.html.elements.Div;
 import com.webforj.component.html.elements.Paragraph;
+import com.webforj.demo.pages.sections.ecom.checkout.widgets.Rating;
 
 public class ProductDetails extends Composite<Div> {
   private ProductInfo productInfo;
@@ -22,7 +23,7 @@ public class ProductDetails extends Composite<Div> {
 
 
     productInfo = new ProductInfo(new Paragraph("Jack & Jones Men's T-Shirt (Blue)"),
-    new Paragraph("★★★★☆ (36 Customer Reviews)"),
+    new Paragraph(new Rating().setValue(4.).setReadOnly(true), new Paragraph(" (36 Customer Reviews)")),
     new Paragraph("In Stock"), "$80 USD",
     "$64 USD",
     "Experience the perfect blend of comfort and style with our Premium Cotton striped T-Shirt. "

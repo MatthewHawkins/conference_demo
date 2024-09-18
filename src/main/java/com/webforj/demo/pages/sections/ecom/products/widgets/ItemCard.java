@@ -3,6 +3,7 @@ package com.webforj.demo.pages.sections.ecom.products.widgets;
 import com.webforj.component.Composite;
 import com.webforj.component.html.elements.Div;
 import com.webforj.component.html.elements.Img;
+import com.webforj.demo.pages.sections.ecom.checkout.widgets.Rating;
 
 public class ItemCard extends Composite<Div> {
   private Div imageDiv = new Div();
@@ -12,7 +13,7 @@ public class ItemCard extends Composite<Div> {
   private Div customerReviewsDiv = new Div();
   private Div stockDiv = new Div();
 
-  public ItemCard(String productName, Img productImage, String price, String rating, String stock, String customerReviews) {
+  public ItemCard(String productName, Img productImage, String price, int rating, String stock, String customerReviews) {
     imageDiv.addClassName("item-card__image");
     nameDiv.addClassName("item-card__name");
     priceDiv.addClassName("item-card__price");
@@ -22,7 +23,8 @@ public class ItemCard extends Composite<Div> {
 
     this.nameDiv.setText(productName);
     this.priceDiv.setText(price);
-    this.ratingDiv.setText(rating);
+    // this.ratingDiv.setText(rating);
+    this.ratingDiv.add(new Rating().setValue(Double.valueOf(rating)).setReadOnly(true));
     this.customerReviewsDiv.setText(customerReviews);
     this.stockDiv.setText("Stock: " + stock);
 

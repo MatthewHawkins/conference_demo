@@ -1,10 +1,9 @@
 package com.webforj.demo.pages.sections.dashboard.widgets.inbox;
 
-import com.webforj.App;
+import com.webforj.component.element.event.ElementClickEvent;
 import com.webforj.component.html.elements.Div;
 import com.webforj.component.html.elements.Paragraph;
 import com.webforj.component.html.elements.Strong;
-import com.webforj.component.html.event.HtmlClickEvent;
 
 
 public class Inbox extends Div {
@@ -24,10 +23,10 @@ public class Inbox extends Div {
     add(card);
 
     String[] names = {
-      "Nina Martí",
+      "Nina Marti",
       "Dragan  Somma",
       "Gwyn Lundgren",
-      "Luisa  Mäkelä",
+      "Luisa  Rojas",
       "Miguel  Pinto",
       "Paschalis Babineaux"
     };
@@ -74,7 +73,7 @@ public class Inbox extends Div {
     card.add(header, messagesWrapper);
   }
 
-  private void handleMessageClick(HtmlClickEvent event) {
+  private void handleMessageClick(ElementClickEvent event) {
     Div message = (Div) event.getComponent();
     String title = (String) message.getUserData("title");
     String messageText = (String) message.getUserData("message");

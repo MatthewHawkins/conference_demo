@@ -33,15 +33,15 @@ public final class Service {
       "$20.00"
     };
 
-    String[] quantities = new String[] {
-        "82",
-        "37",
-        "64",
-        "184",
-        "69",
-        "82",
-        "64",
-        "184"
+    int[] quantities = new int[] {
+        82,
+        37,
+        64,
+        184,
+        69,
+        82,
+        64,
+        184
     };
     
     String[] amounts = new String[] { 
