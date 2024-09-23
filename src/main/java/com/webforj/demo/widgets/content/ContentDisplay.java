@@ -16,6 +16,7 @@ import com.webforj.demo.pages.sections.dashboard.Dashboard;
 import com.webforj.demo.pages.sections.home.Home;
 import com.webforj.demo.pages.sections.ecom.Ecom;
 import com.webforj.demo.pages.Docs;
+import com.webforj.demo.pages.Slides;
 
 public class ContentDisplay extends Composite<Div> {
 
@@ -38,7 +39,8 @@ public class ContentDisplay extends Composite<Div> {
         "home/*",
         "dashboard/*",
         "ecom/*",
-        "docs/*");
+        "docs/*",
+        "slides/*");
   }
 
   private void handleInitialRoute() {
@@ -72,6 +74,10 @@ public class ContentDisplay extends Composite<Div> {
       Docs docs = new Docs();
       pages.put("docs/*", docs);
       self.add(docs);
+    } else if (route.equals("slides/*")) {
+      Slides slides = new Slides();
+      pages.put("slides/*", slides);
+      self.add(slides);
     } else {
       Home home = new Home();
       pages.put("home/*", home);

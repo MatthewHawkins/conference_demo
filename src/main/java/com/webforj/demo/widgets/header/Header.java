@@ -48,6 +48,7 @@ public class Header extends Composite<Div> {
     tabs.addTab("<html> <dwc-icon name=dashboard></dwc-icon> Dashboard");
     tabs.addTab("<html> <dwc-icon name=shopping-cart></dwc-icon> Ecom");
     tabs.addTab("<html> <dwc-icon name=book></dwc-icon> Documentation");
+    tabs.addTab("<html> <dwc-icon name=presentation-analytics></dwc-icon> Slides");
     tabs.addClassName("tabs");
     tabs.setBorderless(true);
     tabs.setExpanse(Expanse.LARGE);
@@ -77,6 +78,10 @@ public class Header extends Composite<Div> {
         break;
       case "docs":
         currentPageIndex = 3;
+        break;
+      case "slides":
+        currentPageIndex = 4;
+        break;
     }
     tabs.select(currentPageIndex);
   }
