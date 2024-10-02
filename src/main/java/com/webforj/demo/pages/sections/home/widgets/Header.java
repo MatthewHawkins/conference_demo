@@ -18,20 +18,21 @@ public final class Header extends Div {
       </html>
     """);
 
-    Div card = new Div();
-    card.addClassName("card card__video");
+    // Div card = new Div();
+    // card.addClassName("card card__video");
 
-    HTMLVideo video = new HTMLVideo();
-    video.setSrc("/files/webforJ-demo/intro.mp4");
-    video.setAutoplay(true);
-    video.setLoop(true);
-    video.setMuted(true);
-    video.setControls(false);
-    video.setPlaysInline(true);
-    video.setPreload(true);
+    // HTMLVideo video = new HTMLVideo();
+    // video.setSrc("/files/webforJ-demo/intro.mp4");
+    // video.setAutoplay(true);
+    // video.setLoop(true);
+    // video.setMuted(true);
+    // video.setControls(false);
+    // video.setPlaysInline(true);
+    // video.setPreload(true);
   
-    card.add(video);
+    // card.add(video);
 
-    add(label, card);
+    // add(label, card);
+    add(label);
   }
 }
